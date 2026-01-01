@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "hugo server --disableFastRender --noHTTPCache --ignoreCache --gc --buildDrafts",
     "start": "hugo server --disableFastRender --noHTTPCache --ignoreCache --gc",
-    "build": "hugo --gc --minify",
+    "build": "npm run build:css && hugo --gc --minify",
+    "build:css": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
