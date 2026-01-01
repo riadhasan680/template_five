@@ -1,0 +1,304 @@
+{{ define "main" }}
+<!-- Home Page Tabs (Popular, GOTY, etc.) -->
+{{ partial "home/tabs.html" . }}
+
+<div class="bg-[#f2f2f2] min-h-screen">
+  <!-- Top Ad Placeholder (Common in PC Gamer sites) -->
+  <div class="hidden md:flex justify-center py-4 bg-white border-b border-gray-200 mb-6">
+      <div class="w-[728px] h-[90px] bg-gray-100 flex items-center justify-center text-gray-400 text-sm font-bold tracking-widest border border-gray-300">
+          LEADERBOARD AD
+      </div>
+  </div>
+
+  <div class="max-w-[1400px] mx-auto px-4 md:px-6 pb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
+      
+      <!-- Left Sidebar (Social Share Sticky) - Hidden on mobile -->
+      <div class="hidden lg:block lg:col-span-1">
+         <div class="sticky top-24 flex flex-col gap-3 items-center">
+             <div class="w-10 h-10 rounded-full bg-pcg-red text-white flex items-center justify-center font-bold text-xs mb-2 shadow-sm cursor-pointer hover:bg-red-700 transition-colors">
+                 <i class="fas fa-share-alt"></i>
+             </div>
+             <a href="#" class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-sm hover:scale-110 transition-transform"><i class="fab fa-facebook-f"></i></a>
+             <a href="#" class="w-10 h-10 rounded-full bg-[#1DA1F2] text-white flex items-center justify-center shadow-sm hover:scale-110 transition-transform"><i class="fab fa-twitter"></i></a>
+             <a href="#" class="w-10 h-10 rounded-full bg-[#FF4500] text-white flex items-center justify-center shadow-sm hover:scale-110 transition-transform"><i class="fab fa-reddit-alien"></i></a>
+             <a href="#" class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-sm hover:scale-110 transition-transform"><i class="fab fa-whatsapp"></i></a>
+             <div class="h-8 w-[1px] bg-gray-300 my-2"></div>
+             <a href="#comments" class="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center shadow-sm hover:bg-gray-900 transition-colors">
+                 <i class="fas fa-comment"></i>
+             </a>
+             <span class="text-[10px] font-bold text-gray-500">{{ .Params.comments | default 0 }}</span>
+         </div>
+      </div>
+
+      <!-- Main Content -->
+      <article class="lg:col-span-7 bg-white p-6 md:p-10 shadow-sm border border-gray-200">
+        <!-- Header -->
+        <header class="mb-8">
+           <!-- Breadcrumbs / Tag -->
+           <div class="flex flex-wrap items-center gap-2 text-xs font-bold mb-6 font-sans tracking-wide">
+               <a href="/" class="text-pcg-red hover:underline uppercase">Home</a>
+               <span class="text-gray-300">/</span>
+               <a href="/posts" class="text-pcg-red hover:underline uppercase">News</a>
+               {{ if .Params.tags }}
+               <span class="text-gray-300">/</span>
+               <span class="bg-gray-100 text-pcg-red px-2 py-1 rounded uppercase">{{ index .Params.tags 0 }}</span>
+               {{ end }}
+           </div>
+           
+           <!-- Title -->
+           <h1 class="text-3xl md:text-5xl lg:text-[3.5rem] font-extrabold text-black mb-6 leading-[1.1] font-serif tracking-tight">
+               {{ .Title }}
+           </h1>
+           
+           <!-- Subtitle/Description -->
+           {{ with .Params.description }}
+           <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed font-sans border-l-4 border-pcg-red pl-6">
+               {{ . }}
+           </p>
+           {{ end }}
+           
+           <!-- Author Meta -->
+           <div class="flex flex-col sm:flex-row sm:items-center justify-between border-t border-b border-gray-100 py-5 font-sans">
+               <div class="flex items-center gap-4">
+                   {{ if .Params.author_image }}
+                   <div class="relative">
+                       <img src="{{ .Params.author_image }}" alt="{{ .Params.author }}" class="w-14 h-14 rounded-full object-cover ring-2 ring-gray-100">
+                       <div class="absolute -bottom-1 -right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-white" title="Online"></div>
+                   </div>
+                   {{ else }}
+                   <div class="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 ring-2 ring-gray-50">
+                      <i class="fas fa-user text-2xl"></i>
+                   </div>
+                   {{ end }}
+                   <div class="flex flex-col">
+                       <span class="font-black text-gray-900 uppercase text-sm tracking-wide">By <a href="#" class="text-pcg-red hover:underline">{{ .Params.author }}</a></span>
+                       <div class="text-xs text-gray-500 font-medium mt-1">
+                           <span class="flex items-center gap-1"><i class="far fa-clock"></i> published {{ .Date.Format "January 2, 2006" }}</span>
+                       </div>
+                   </div>
+               </div>
+               
+               <!-- Mobile Share (visible only on small screens) -->
+               <div class="flex lg:hidden items-center gap-3 mt-4 sm:mt-0">
+                   <a href="#" class="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center"><i class="fab fa-facebook-f"></i></a>
+                   <a href="#" class="w-8 h-8 rounded-full bg-[#1DA1F2] text-white flex items-center justify-center"><i class="fab fa-twitter"></i></a>
+                   <a href="#" class="w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center"><i class="fas fa-link"></i></a>
+               </div>
+           </div>
+        </header>
+
+        <!-- Dummy "Review Score" Card (Optional - only if appropriate, but requested "dummy card") -->
+        <div class="mb-8 bg-gray-50 border border-gray-200 p-4 rounded-lg flex items-center justify-between">
+             <div class="flex items-center gap-4">
+                 <div class="w-16 h-16 bg-pcg-red text-white flex items-center justify-center text-3xl font-black rounded shadow-sm">
+                     85
+                 </div>
+                 <div>
+                     <h4 class="font-bold text-gray-900 uppercase">PC Gamer Score</h4>
+                     <p class="text-sm text-gray-500">Excellent performance and value.</p>
+                 </div>
+             </div>
+             <button class="text-xs font-bold uppercase border border-gray-300 px-4 py-2 rounded hover:bg-white transition-colors">
+                 View Verdict
+             </button>
+        </div>
+
+        <!-- Featured Image -->
+        {{ with .Params.image }}
+        <figure class="mb-12 relative group">
+            <div class="overflow-hidden rounded-sm">
+                <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-auto object-cover shadow-sm transition-transform duration-700 group-hover:scale-105">
+            </div>
+            {{ with $.Params.image_caption }}
+            <figcaption class="flex items-center justify-end gap-2 text-xs text-gray-500 mt-3 font-sans">
+                <i class="fas fa-camera"></i> {{ . }}
+            </figcaption>
+            {{ end }}
+        </figure>
+        {{ end }}
+
+        <!-- Table of Contents Dummy Dropdown -->
+        <div class="mb-10 p-6 bg-gray-50 border-l-4 border-gray-800">
+            <details class="group">
+                <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-gray-800 hover:text-pcg-red">
+                    <span class="uppercase tracking-wider">Table of Contents</span>
+                    <span class="transition group-open:rotate-180">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-600 mt-4 group-open:animate-fadeIn text-sm font-sans space-y-2">
+                    <a href="#" class="block hover:text-pcg-red hover:underline decoration-1 underline-offset-4">1. Introduction</a>
+                    <a href="#" class="block hover:text-pcg-red hover:underline decoration-1 underline-offset-4">2. Performance Analysis</a>
+                    <a href="#" class="block hover:text-pcg-red hover:underline decoration-1 underline-offset-4">3. Benchmarks & Testing</a>
+                    <a href="#" class="block hover:text-pcg-red hover:underline decoration-1 underline-offset-4">4. Final Verdict</a>
+                </div>
+            </details>
+        </div>
+
+        <!-- Article Body -->
+        <div class="prose prose-lg max-w-none 
+             prose-headings:font-bold prose-headings:font-serif prose-headings:text-gray-900
+             prose-p:text-gray-800 prose-p:leading-8 prose-p:font-sans
+             prose-a:text-pcg-red prose-a:font-bold prose-a:no-underline hover:prose-a:underline hover:prose-a:text-red-700
+             prose-blockquote:border-l-pcg-red prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:not-italic
+             prose-img:rounded-lg prose-img:shadow-md
+             font-sans text-gray-800">
+            
+            <p class="lead text-xl font-medium text-gray-900 mb-8">
+                This is a dummy intro paragraph that stands out a bit more than the rest of the text, giving the reader a quick summary of what to expect.
+            </p>
+
+            {{ .Content }}
+            
+            <!-- Dummy "Pros & Cons" Card inside content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
+                <div class="border-t-4 border-green-500 bg-gray-50 p-6">
+                    <h4 class="font-bold text-green-700 uppercase mb-4 flex items-center gap-2"><i class="fas fa-plus-circle"></i> Pros</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex gap-2"><span class="text-green-500">✔</span> Amazing visuals</li>
+                        <li class="flex gap-2"><span class="text-green-500">✔</span> Great battery life</li>
+                        <li class="flex gap-2"><span class="text-green-500">✔</span> Affordable price</li>
+                    </ul>
+                </div>
+                <div class="border-t-4 border-red-500 bg-gray-50 p-6">
+                    <h4 class="font-bold text-red-700 uppercase mb-4 flex items-center gap-2"><i class="fas fa-minus-circle"></i> Cons</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex gap-2"><span class="text-red-500">✘</span> Limited availability</li>
+                        <li class="flex gap-2"><span class="text-red-500">✘</span> No RGB lighting</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Bottom Section -->
+        <div class="mt-16 pt-10 border-t-2 border-gray-100">
+            <h3 class="text-2xl font-black mb-8 font-serif flex items-center gap-3">
+                <span class="w-2 h-8 bg-pcg-red block"></span>
+                READ MORE
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {{ $related := .Site.RegularPages | first 4 }}
+                {{ range $related }}
+                <div class="flex flex-col group cursor-pointer bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 transition-all p-3 rounded-lg">
+                    <div class="w-full aspect-video bg-gray-200 overflow-hidden rounded mb-4 relative">
+                        <a href="{{ .RelPermalink }}">
+                          <img src="{{ .Params.image }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </a>
+                        <span class="absolute bottom-2 left-2 bg-pcg-red text-white text-[10px] font-bold uppercase px-2 py-1">
+                            {{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}News{{ end }}
+                        </span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg leading-tight group-hover:text-pcg-red transition-colors font-serif">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h4>
+                        <div class="flex items-center gap-2 text-xs text-gray-500 mt-2">
+                             <span>{{ .Date.Format "Jan 2" }}</span>
+                             <span>•</span>
+                             <span>{{ .ReadingTime }} min read</span>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+      </article>
+
+      <!-- Right Sidebar -->
+      <aside class="lg:col-span-4 space-y-8">
+          
+          <!-- Sticky Wrapper -->
+          <div class="sticky top-24 space-y-8">
+              
+            <!-- Ad Placeholder -->
+            <div class="bg-gray-100 h-[250px] flex flex-col items-center justify-center text-gray-400 text-sm font-bold tracking-widest border border-gray-200 relative overflow-hidden group">
+                <span class="z-10 group-hover:scale-110 transition-transform">ADVERTISEMENT</span>
+                <div class="absolute inset-0 bg-stripes opacity-5"></div>
+            </div>
+
+            <!-- "Dummy" Tabs Widget -->
+            <div class="bg-white border border-gray-200 shadow-sm overflow-hidden">
+                <div class="flex border-b border-gray-200">
+                    <button class="flex-1 py-3 text-xs font-bold uppercase text-pcg-red border-b-2 border-pcg-red bg-white">Trending</button>
+                    <button class="flex-1 py-3 text-xs font-bold uppercase text-gray-500 hover:text-black hover:bg-gray-50 transition-colors">Latest</button>
+                    <button class="flex-1 py-3 text-xs font-bold uppercase text-gray-500 hover:text-black hover:bg-gray-50 transition-colors">Reviews</button>
+                </div>
+                <div class="p-0">
+                    <ul class="divide-y divide-gray-100">
+                        {{ range first 5 .Site.RegularPages }}
+                        <li class="p-4 flex gap-4 group cursor-pointer hover:bg-gray-50 transition-colors">
+                            <span class="text-3xl font-black text-gray-200 group-hover:text-pcg-red transition-colors leading-none font-display">
+                                {{ add .Weight 1 }}
+                            </span>
+                            <h5 class="text-sm font-bold leading-snug group-hover:text-pcg-red transition-colors">
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </h5>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- "Dummy" Dropdown / Specification Widget -->
+            <div class="bg-gray-900 text-white p-6 rounded-sm shadow-lg">
+                <h4 class="font-bold uppercase text-lg mb-4 border-b border-gray-700 pb-2">Specs & Deals</h4>
+                
+                <div class="mb-4">
+                    <label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Choose Region</label>
+                    <div class="relative">
+                        <select class="w-full bg-gray-800 text-white border border-gray-700 rounded px-3 py-2 text-sm appearance-none cursor-pointer focus:outline-none focus:border-pcg-red">
+                            <option>United States (USD)</option>
+                            <option>United Kingdom (GBP)</option>
+                            <option>Australia (AUD)</option>
+                            <option>Europe (EUR)</option>
+                        </select>
+                        <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 text-xs">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="bg-gray-800 p-3 rounded flex items-center justify-between group cursor-pointer hover:bg-gray-700 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-black overflow-hidden p-1">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="w-full h-full object-contain">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-gray-300">Amazon</span>
+                                <span class="text-[10px] text-green-400">In Stock</span>
+                            </div>
+                        </div>
+                        <span class="font-bold text-yellow-400">$1,299</span>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-3 rounded flex items-center justify-between group cursor-pointer hover:bg-gray-700 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-black overflow-hidden p-1">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Best_Buy_Logo.svg/1200px-Best_Buy_Logo.svg.png" class="w-full h-full object-contain">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-gray-300">Best Buy</span>
+                                <span class="text-[10px] text-red-400">Low Stock</span>
+                            </div>
+                        </div>
+                        <span class="font-bold text-yellow-400">$1,349</span>
+                    </div>
+                </div>
+                
+                <button class="w-full bg-pcg-red text-white uppercase font-black text-sm py-3 mt-6 hover:bg-red-600 transition-colors rounded-sm shadow-md">
+                    View All Deals
+                </button>
+            </div>
+
+            <!-- Newsletter -->
+            {{ partial "sidebar/newsletter.html" . }}
+
+          </div>
+      </aside>
+    </div>
+  </div>
+</div>
+{{ end }}

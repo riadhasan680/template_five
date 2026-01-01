@@ -1,0 +1,78 @@
+<div class="max-w-[1280px] mx-auto px-4 pt-14">
+    <!-- Section Header -->
+    <div class="flex items-center mb-8">
+        <div class="w-1.5 h-8 bg-pcg-red mr-3"></div>
+        <h2 class="font-display text-2xl font-bold uppercase text-black tracking-wide">Latest Videos & Trailers</h2>
+        <div class="h-[1px] bg-gray-200 flex-grow ml-4"></div>
+    </div>
+
+    <!-- Featured Video -->
+    {{ with .Site.Params.latest_videos.featured }}
+    <a href="{{ .url }}" class="block bg-[#0f1115] mb-6 group cursor-pointer relative overflow-hidden">
+        <div class="flex flex-col md:flex-row">
+            <!-- Text Content (Left) -->
+            <div class="md:w-1/3 p-6 md:p-8 flex flex-col justify-center relative z-10">
+                <div class="mb-4">
+                    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-4">
+                        <i class="fas fa-play text-pcg-red text-xs ml-0.5"></i>
+                    </div>
+                    <h3 class="text-white text-xl md:text-2xl font-bold leading-tight mb-4 hover:text-pcg-red transition-colors">
+                        {{ .title }}
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed line-clamp-4">
+                        {{ .description }}
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Video Thumbnail (Right) -->
+            <div class="md:w-2/3 relative h-[300px] md:h-[400px]">
+                <img src="{{ .image }}" alt="{{ .title }}" class="w-full h-full object-cover group-hover:opacity-100 transition-opacity duration-300">
+                
+                <!-- Large Play Button Overlay -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                     <!-- Triangle Shape for Play Button -->
+                     <div class="w-0 h-0 border-t-[30px] border-t-transparent border-l-[50px] border-l-white/90 border-b-[30px] border-b-transparent ml-2 filter drop-shadow-lg"></div>
+                </div>
+
+                <!-- PC Gamer Logo Overlay -->
+                <div class="absolute top-4 right-4">
+                    <div class="bg-pcg-red text-white text-xs font-bold px-2 py-1 uppercase tracking-widest">
+                        PC Gamer
+                    </div>
+                </div>
+
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0f1115] via-transparent to-transparent"></div>
+            </div>
+        </div>
+        
+        <!-- Red Border Effect on Hover (Optional, matching style) -->
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-pcg-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+    </a>
+    {{ end }}
+
+    <!-- Video List -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        {{ range .Site.Params.latest_videos.list }}
+        <a href="{{ .url }}" class="group cursor-pointer block">
+            <div class="relative aspect-video mb-3 overflow-hidden border-b-4 border-transparent group-hover:border-pcg-red transition-all">
+                <img src="{{ .image }}" alt="{{ .title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                
+                <!-- PC Gamer Logo Small -->
+                <div class="absolute top-0 right-0 bg-pcg-red text-white text-[10px] font-bold px-1.5 py-0.5 uppercase">
+                    PC Gamer
+                </div>
+                
+                <!-- Play Icon (Bottom Left) -->
+                <div class="absolute bottom-2 left-2 w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-md group-hover:bg-pcg-red group-hover:text-white transition-colors">
+                    <i class="fas fa-play text-black text-xs ml-0.5 group-hover:text-white transition-colors"></i>
+                </div>
+            </div>
+            <h4 class="font-bold text-sm leading-tight group-hover:text-pcg-red transition-colors line-clamp-3">
+                {{ .title }}
+            </h4>
+        </a>
+        {{ end }}
+    </div>
+</div>

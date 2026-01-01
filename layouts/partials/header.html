@@ -1,0 +1,480 @@
+<header class="sticky top-0 z-50 flex flex-col">
+  <!-- Top Header (Black) -->
+  <div class="bg-pcg-black text-white h-14 relative z-50 px-4">
+    <div
+      class="max-w-[1280px] mx-auto  h-full flex items-center justify-between"
+    >
+      <!-- Left: Hamburger & Logo -->
+      <div class="flex items-center gap-4">
+        <button id="mobile-menu-btn" class="lg:hidden text-white text-xl hover:text-pcg-red transition-colors">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="/" class="flex items-center group">
+          <span
+            class="bg-pcg-red text-white font-black px-2 py-1 text-2xl tracking-tighter group-hover:bg-red-600 transition-colors"
+            >PC</span
+          >
+          <span
+            class="text-white font-black text-2xl tracking-tighter ml-1 group-hover:text-gray-300 transition-colors"
+            >GAMER</span
+          >
+        </a>
+      </div>
+
+      <!-- Right: Socials, Search, Subscribe, Sign In -->
+      <div class="flex items-center space-x-4 md:space-x-6">
+        
+        <!-- Edition Selector (Dynamic) -->
+        <div class="hidden md:flex items-center text-xs font-bold uppercase text-gray-400 border-r border-gray-700 pr-4 mr-2 relative group">
+           <button id="edition-selector-btn" class="flex items-center hover:text-white focus:outline-none">
+             {{ range where site.Params.editions "active" true }}
+             <span class="mr-2">{{ .name }} Edition</span>
+             <span class="text-xl">{{ .flag }}</span>
+             <i class="fas fa-caret-down ml-2 transition-transform duration-200 group-hover:rotate-180"></i>
+             {{ end }}
+           </button>
+           
+           <!-- Dropdown -->
+           <div id="edition-dropdown" class="absolute top-full right-0 mt-0 w-56 bg-white text-gray-900 shadow-xl rounded-sm hidden flex-col z-[100] py-2 border border-gray-100 transform origin-top-right transition-all duration-200">
+             {{ range site.Params.editions }}
+             <a href="{{ .url }}" class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-100 transition-colors group/item">
+               <div class="flex items-center">
+                 <span class="text-2xl mr-3">{{ .flag }}</span>
+                 <span class="font-bold text-sm">{{ .name }}</span>
+               </div>
+               {{ if .active }}
+               <i class="fas fa-check text-green-600 text-sm"></i>
+               {{ end }}
+             </a>
+             {{ end }}
+           </div>
+        </div>
+
+        <!-- Social Icons (Desktop) -->
+        <div
+          class="hidden xl:flex items-center space-x-3 border-r border-gray-700 pr-6 mr-2"
+        >
+          {{ range site.Params.social }}
+          <a
+            href="{{ .url }}"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 {{ .bg_color }}"
+            title="{{ .name }}"
+          >
+             <i class="{{ .icon }}"></i>
+          </a>
+          {{ end }}
+        </div>
+
+        <!-- Search Icon (Visible on Mobile) -->
+        <a href="#" class="hover:text-pcg-red transition-colors"
+          ><i class="fas fa-search text-lg"></i
+        ></a>
+
+        <!-- Bell Icon (Visible on Mobile) -->
+        <a href="#" class="hover:text-pcg-red transition-colors"
+           ><i class="fas fa-bell text-lg"></i
+        ></a>
+        
+        <button
+          id="subscribe-btn"
+          class="hidden md:flex bg-white text-pcg-black font-bold text-xs px-3 py-1.5 uppercase hover:bg-gray-200 transition-colors items-center focus:outline-none"
+        >
+          Subscribe
+          <i id="subscribe-arrow" class="fas fa-caret-down ml-1 transition-transform duration-200"></i>
+        </button>
+        
+        <button id="sign-in-btn" class="hidden md:flex items-center text-sm font-bold hover:text-pcg-red transition-colors focus:outline-none">
+            Sign In <i class="fas fa-user ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Header (Red Navigation) -->
+  <div class="bg-pcg-red text-white shadow-md relative z-40 hidden lg:block">
+    <div class="max-w-[1280px] mx-auto h-10 lg:h-12">
+      <nav
+        class="flex items-center overflow-x-auto lg:overflow-visible whitespace-nowrap scrollbar-hide h-10 lg:h-12"
+      >
+        {{ range site.Menus.main }}
+          {{ if .HasChildren }}
+            <div class="relative group h-full z-50">
+                <a
+                  href="{{ .URL }}"
+                  class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide cursor-pointer"
+                >
+                  {{ if .Pre }}{{ .Pre | safeHTML }}{{ end }}
+                  {{ if .Name }}<span class="{{ if .Pre }}ml-4{{ end }}">{{ .Name }}</span>{{ end }}
+                  {{ if .Post }}{{ .Post | safeHTML }}{{ end }}
+                </a>
+                
+                <!-- Dropdown Menu -->
+                <div class="absolute right-0 top-full w-64 bg-[#111] shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 z-50">
+                    <div class="py-2">
+                        {{ range .Children }}
+                        <a href="{{ .URL }}" class="block px-5 py-3 text-gray-200 text-sm font-semibold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            {{ .Name }}
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+          {{ else }}
+            <a
+              href="{{ .URL }}"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide {{ if eq .URL "/" }} lg:border-r lg:border-red-500/30 {{ end }}"
+            >
+              {{ if .Pre }}{{ .Pre | safeHTML }}{{ end }}
+              {{ if .Name }}<span class="{{ if .Pre }}ml-4{{ end }}">{{ .Name }}</span>{{ end }}
+              {{ if .Post }}{{ .Post | safeHTML }}{{ end }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </nav>
+    </div>
+  </div>
+
+  <!-- Subscribe Panel -->
+  <div id="subscribe-panel" class="w-[1280px] mx-auto bg-white  hidden relative z-30 transition-all duration-300 origin-top">
+     <div class="px-4 py-12">
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-center gap-12">
+           <!-- Left: Image -->
+           <div class="flex-shrink-0 relative">
+               <div class="relative w-64 h-80 transition-transform hover:scale-105 duration-300">
+                  <!-- Tablet Mockup -->
+                  <div class="absolute top-0 left-0 w-56 h-72 bg-gray-800 rounded-xl shadow-2xl transform -rotate-3 border-4 border-gray-700 overflow-hidden z-10">
+                      <!-- Screen Content -->
+                      <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                              <span class="text-white font-black text-2xl leading-none">PC<br>GAMER</span>
+                              <span class="text-yellow-400 font-bold text-xs mt-1">EXCLUSIVE ISSUE</span>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Phone Mockup -->
+                  <div class="absolute bottom-0 right-0 w-24 h-44 bg-gray-800 rounded-xl shadow-2xl border-4 border-gray-700 overflow-hidden z-20">
+                       <!-- Screen Content -->
+                       <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80');">
+                           <div class="absolute inset-0 bg-black/30"></div>
+                       </div>
+                  </div>
+               </div>
+           </div>
+
+           <!-- Right: Content -->
+           <div class="flex-1 max-w-lg pt-4 text-center md:text-left">
+              <h3 class="text-3xl md:text-4xl font-display font-bold text-pcg-black mb-6 tracking-tight">PC Gamer Magazine Subscription</h3>
+              
+              <div class="mb-6">
+                 <h4 class="text-xl text-gray-800 mb-3 font-medium">Why subscribe?</h4>
+                 <ul class="space-y-3 inline-block md:block text-left">
+                    <li class="flex items-start">
+                       <i class="fas fa-circle text-[6px] mt-2.5 mr-3 text-pcg-black flex-shrink-0"></i>
+                       <span class="text-lg text-gray-800">Subscribe to the world's #1 PC gaming mag</span>
+                    </li>
+                    <li class="flex items-start">
+                       <i class="fas fa-circle text-[6px] mt-2.5 mr-3 text-pcg-black flex-shrink-0"></i>
+                       <span class="text-lg text-gray-800">Try a single issue or save on a subscription</span>
+                    </li>
+                    <li class="flex items-start">
+                       <i class="fas fa-circle text-[6px] mt-2.5 mr-3 text-pcg-black flex-shrink-0"></i>
+                       <span class="text-lg text-gray-800">Issues delivered straight to your door or device</span>
+                    </li>
+                 </ul>
+              </div>
+
+              <div class="flex flex-col items-center md:items-start gap-4">
+                  <div class="text-2xl font-bold text-gray-900">
+                     <span class="text-lg font-normal text-gray-600">From</span> US$32.49
+                  </div>
+                  <a href="#" class="bg-pcg-red text-white font-bold uppercase text-lg px-12 py-3 hover:bg-red-700 transition-colors w-full md:w-auto text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
+                     Subscribe Now
+                  </a>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu-drawer" class="fixed inset-y-0 left-0 w-[280px] bg-pcg-black z-[70] transform -translate-x-full transition-transform duration-300 overflow-y-auto shadow-2xl">
+  <div class="p-4 border-b border-gray-800 flex justify-between items-center h-14">
+     <span class="text-white font-bold text-lg">Menu</span>
+     <button id="mobile-menu-close" class="text-gray-400 hover:text-white transition-colors">
+       <i class="fas fa-times text-xl"></i>
+     </button>
+  </div>
+  <div class="p-4">
+      <!-- Mobile Edition Selector -->
+      <div class="mb-6 pb-4 border-b border-gray-800">
+         <h5 class="text-gray-500 uppercase font-bold text-xs mb-3">Edition</h5>
+         <div class="flex flex-col space-y-2">
+            {{ range site.Params.editions }}
+            <a href="{{ .url }}" class="flex items-center justify-between text-sm font-bold {{ if .active }}text-white{{ else }}text-gray-400 hover:text-white{{ end }}">
+                <span>{{ .name }}</span>
+                <span>{{ .flag }}</span>
+            </a>
+            {{ end }}
+         </div>
+      </div>
+
+      <a href="#" class="w-full bg-pcg-red text-white text-center font-bold uppercase py-2 block mb-4 hover:bg-red-600 transition-colors">Subscribe</a>
+      
+      <nav class="flex flex-col space-y-1">
+         {{ range site.Menus.main }}
+           {{ if .HasChildren }}
+             <div class="border-b border-gray-800">
+                <button class="w-full text-left text-gray-300 hover:text-pcg-red font-bold py-3 transition-colors uppercase text-sm flex justify-between items-center group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.fa-chevron-down').classList.toggle('rotate-180');">
+                    <span>{{ if .Pre }}{{ .Pre | safeHTML }} {{ end }}{{ .Name }}</span>
+                    <i class="fas fa-chevron-down transition-transform duration-200 text-xs"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 bg-white/5 rounded mb-2">
+                    {{ range .Children }}
+                        <a href="{{ .URL }}" class="block text-gray-400 hover:text-white font-semibold py-2 transition-colors uppercase text-xs border-b border-gray-800/50 last:border-0">
+                            {{ .Name }}
+                        </a>
+                    {{ end }}
+                </div>
+             </div>
+           {{ else }}
+             <a href="{{ .URL }}" class="block text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+               {{ if .Pre }}{{ .Pre | safeHTML }} {{ end }}{{ .Name }}
+             </a>
+           {{ end }}
+         {{ end }}
+      </nav>
+      
+      <!-- Mobile Socials -->
+      <div class="mt-8">
+        <h5 class="text-gray-500 uppercase font-bold text-xs mb-4">Follow Us</h5>
+        <div class="flex flex-wrap gap-4">
+            {{ range site.Params.social }}
+            <a href="{{ .url }}" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors {{ .bg_color }}">
+                 <i class="{{ .icon }}"></i>
+            </a>
+            {{ end }}
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div id="login-modal" class="fixed inset-0 z-[100] hidden">
+    <!-- Overlay -->
+    <div id="login-overlay" class="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+    
+    <!-- Modal Content -->
+    <div id="login-content" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white shadow-2xl rounded-lg overflow-hidden scale-90 opacity-0 transition-all duration-300">
+        <!-- Header -->
+        <div class="bg-pcg-red p-6 flex justify-between items-center">
+            <h2 class="text-white text-2xl font-display font-bold uppercase tracking-wide">Sign In</h2>
+            <button id="login-close" class="text-white hover:text-gray-200 transition-colors focus:outline-none">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Body -->
+        <div class="p-8">
+            <div class="space-y-3 mb-6">
+                <button type="button" class="w-full flex items-center justify-center bg-white border border-gray-300 text-gray-700 font-bold py-2.5 rounded hover:bg-gray-50 transition-colors">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-3" alt="Google">
+                    Sign in with Google
+                </button>
+                <button type="button" class="w-full flex items-center justify-center bg-[#1877F2] text-white font-bold py-2.5 rounded hover:bg-[#166fe5] transition-colors">
+                    <i class="fab fa-facebook-f mr-3 text-lg"></i>
+                    Sign in with Facebook
+                </button>
+                <button type="button" class="w-full flex items-center justify-center bg-black text-white font-bold py-2.5 rounded hover:bg-gray-800 transition-colors">
+                    <i class="fab fa-apple mr-3 text-lg"></i>
+                    Sign in with Apple
+                </button>
+            </div>
+            
+            <div class="relative flex py-2 items-center mb-6">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="flex-shrink-0 mx-4 text-gray-400 text-xs font-bold uppercase">Or sign in with email</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+            </div>
+
+            <form class="space-y-5">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2 uppercase" for="email">Email or Username</label>
+                    <input class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-pcg-red focus:ring-1 focus:ring-pcg-red transition-colors" id="email" type="text" placeholder="Enter your email">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2 uppercase" for="password">Password</label>
+                    <input class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-pcg-red focus:ring-1 focus:ring-pcg-red transition-colors" id="password" type="password" placeholder="••••••••">
+                </div>
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox text-pcg-red h-4 w-4">
+                        <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                    </label>
+                    <a href="#" class="text-sm text-pcg-red hover:underline font-bold">Forgot Password?</a>
+                </div>
+                <button type="button" class="w-full bg-pcg-black text-white font-bold uppercase py-3 rounded hover:bg-gray-800 transition-colors transform active:scale-95 duration-150">
+                    Log In
+                </button>
+            </form>
+            
+            <div class="mt-6 text-center border-t border-gray-200 pt-6">
+                <p class="text-gray-600 text-sm">Don't have an account?</p>
+                <a href="#" class="inline-block mt-2 text-pcg-red font-bold uppercase hover:underline">Create Account</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const drawer = document.getElementById('mobile-menu-drawer');
+      const overlay = document.getElementById('mobile-menu-overlay');
+
+      function toggleMenu() {
+        const isHidden = drawer.classList.contains('-translate-x-full');
+        if (isHidden) {
+           drawer.classList.remove('-translate-x-full');
+           overlay.classList.remove('hidden');
+           // Trigger reflow to enable transition
+           void overlay.offsetWidth; 
+           overlay.classList.remove('opacity-0');
+           document.body.style.overflow = 'hidden';
+        } else {
+           drawer.classList.add('-translate-x-full');
+           overlay.classList.add('opacity-0');
+           setTimeout(() => {
+               overlay.classList.add('hidden');
+               document.body.style.overflow = '';
+           }, 300);
+        }
+      }
+
+      if(btn) btn.addEventListener('click', toggleMenu);
+      if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
+      if(overlay) overlay.addEventListener('click', toggleMenu);
+
+      // Edition Selector Logic
+      const editionBtn = document.getElementById('edition-selector-btn');
+      const editionDropdown = document.getElementById('edition-dropdown');
+      
+      // Function to update active edition UI
+      function updateActiveEdition(name, flag) {
+        if(editionBtn) {
+           const spans = editionBtn.querySelectorAll('span');
+           if(spans.length >= 2) {
+             spans[0].textContent = name + ' Edition';
+             spans[1].textContent = flag;
+           }
+        }
+      }
+
+      if(editionBtn && editionDropdown) {
+        // Toggle dropdown
+        editionBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          editionDropdown.classList.toggle('hidden');
+          editionDropdown.classList.toggle('flex');
+        });
+        
+        // Handle edition selection
+        const editionLinks = editionDropdown.querySelectorAll('a');
+        editionLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+               e.preventDefault();
+               const name = link.querySelector('.font-bold').textContent;
+               const flag = link.querySelector('.text-2xl').textContent;
+               
+               // Update UI
+               updateActiveEdition(name, flag);
+               
+               // Update Checkmarks
+               editionLinks.forEach(l => {
+                  const check = l.querySelector('.fa-check');
+                  if(check) check.remove();
+               });
+               
+               // Add checkmark to clicked
+               const checkIcon = document.createElement('i');
+               checkIcon.className = 'fas fa-check text-green-600 text-sm';
+               link.appendChild(checkIcon);
+
+               // Close dropdown
+               editionDropdown.classList.add('hidden');
+               editionDropdown.classList.remove('flex');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!editionBtn.contains(e.target) && !editionDropdown.contains(e.target)) {
+            editionDropdown.classList.add('hidden');
+            editionDropdown.classList.remove('flex');
+          }
+        });
+      }
+
+      // Login Modal Logic
+      const loginBtn = document.getElementById('sign-in-btn');
+      const loginModal = document.getElementById('login-modal');
+      const loginOverlay = document.getElementById('login-overlay');
+      const loginContent = document.getElementById('login-content');
+      const loginClose = document.getElementById('login-close');
+
+      function toggleLoginModal() {
+         if(loginModal.classList.contains('hidden')) {
+            loginModal.classList.remove('hidden');
+            // Trigger reflow
+            void loginModal.offsetWidth;
+            loginOverlay.classList.remove('opacity-0');
+            loginContent.classList.remove('scale-90', 'opacity-0');
+            loginContent.classList.add('scale-100', 'opacity-100');
+            document.body.style.overflow = 'hidden';
+         } else {
+            loginOverlay.classList.add('opacity-0');
+            loginContent.classList.remove('scale-100', 'opacity-100');
+            loginContent.classList.add('scale-90', 'opacity-0');
+            setTimeout(() => {
+                loginModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+         }
+      }
+
+      if(loginBtn) loginBtn.addEventListener('click', toggleLoginModal);
+      if(loginClose) loginClose.addEventListener('click', toggleLoginModal);
+      if(loginOverlay) loginOverlay.addEventListener('click', toggleLoginModal);
+
+      // Subscribe Panel Logic
+      const subscribeBtn = document.getElementById('subscribe-btn');
+      const subscribePanel = document.getElementById('subscribe-panel');
+      const subscribeArrow = document.getElementById('subscribe-arrow');
+
+      if(subscribeBtn && subscribePanel) {
+         subscribeBtn.addEventListener('click', (e) => {
+             e.stopPropagation();
+             const isHidden = subscribePanel.classList.contains('hidden');
+             
+             if(isHidden) {
+                subscribePanel.classList.remove('hidden');
+                subscribeArrow.classList.add('rotate-180');
+             } else {
+                subscribePanel.classList.add('hidden');
+                subscribeArrow.classList.remove('rotate-180');
+             }
+         });
+
+         // Close panel when clicking outside
+         document.addEventListener('click', (e) => {
+            if(!subscribeBtn.contains(e.target) && !subscribePanel.contains(e.target)) {
+                subscribePanel.classList.add('hidden');
+                subscribeArrow.classList.remove('rotate-180');
+            }
+         });
+      }
+  });
+</script>

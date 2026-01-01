@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<!-- Home Page Tabs (Popular, GOTY, etc.) -->
+{{ partial "home/tabs.html" . }}
+
+<!-- Dynamic Layout Switching -->
+{{ $hubSections := slice "News" "Games" "Hardware" "Hardware Guide" "Reviews" "Guides" "Video" "Forum" }}
+{{ $currentTitle := .Title }}
+{{ $isHub := false }}
+
+{{ range $hubSections }}
+    {{ if eq . $currentTitle }}
+        {{ $isHub = true }}
+    {{ end }}
+{{ end }}
+
+{{ if $isHub }}
+    {{/* Design 2: Rich Hub Layout for Menu Items */}}
+    {{ partial "list-hub.html" . }}
+{{ else }}
+    {{/* Design 1: Simple List Layout for Tab Items */}}
+    {{ partial "list-simple.html" . }}
+{{ end }}
+
+{{ end }}

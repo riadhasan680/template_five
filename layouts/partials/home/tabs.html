@@ -1,0 +1,24 @@
+{{ $currentPage := . }}
+<div class="bg-[#f2f2f2] relative z-20 mb-8 border-b border-gray-200">
+  <div class="max-w-[1280px] mx-auto px-4">
+      <div class="flex items-center overflow-x-auto whitespace-nowrap scrollbar-hide -mb-px">
+          {{ range .Site.Params.tabs }}
+              {{ $isActive := false }}
+              
+              {{/* Active State Logic */}}
+              {{ if eq $currentPage.RelPermalink .url }}
+                  {{ $isActive = true }}
+              {{ end }}
+              
+              {{/* Special case for Home/POPULAR */}}
+              {{ if and .active $currentPage.IsHome }}
+                  {{ $isActive = true }}
+              {{ end }}
+
+              <a href="{{ .url }}" class="block py-4 px-6 text-sm font-bold uppercase tracking-wide transition-colors {{ if $isActive }}text-pcg-red border-b-4 border-pcg-red{{ else }}text-gray-700 hover:text-pcg-red border-b-4 border-transparent hover:border-gray-200{{ end }}">
+                  {{ .name }}
+              </a>
+          {{ end }}
+      </div>
+  </div>
+</div>

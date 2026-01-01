@@ -1,0 +1,43 @@
+<div class="bg-[#f2f2f2] pt-14 pb-14">
+    <div class="max-w-[1280px] mx-auto px-4">
+        <!-- Section Header -->
+        <div class="relative border-t border-b border-black py-3 mb-6">
+            <h2 class="text-xl md:text-xl font-semibold uppercase tracking-tighter text-black font-sans text-center">{{ .Site.Params.latest_codes.title }}</h2>
+            <a href="{{ .Site.Params.latest_codes.view_more_url }}" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-xs font-bold uppercase tracking-wide text-black hover:text-pcg-red transition-colors flex items-center">
+                VIEW MORE <i class="fas fa-caret-right ml-1"></i>
+            </a>
+        </div>
+
+        <!-- Codes Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{ range .Site.Params.latest_codes.items }}
+            <div class="bg-white flex flex-col h-full group">
+                <!-- Image Container -->
+                <a href="{{ .url }}" class="relative block overflow-hidden aspect-video">
+                    <!-- Category Label -->
+                    <span class="absolute top-0 left-0 bg-pcg-red text-white text-[10px] font-bold uppercase px-2 py-1 z-10 tracking-wider">
+                        {{ .category }}
+                    </span>
+                    <img src="{{ .image }}" alt="{{ .title }}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </a>
+
+                <!-- Content -->
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold leading-tight mb-3 font-sans text-gray-900 group-hover:text-pcg-red transition-colors">
+                        <a href="{{ .url }}">{{ .title }}</a>
+                    </h3>
+                    
+                    <div class="text-xs text-gray-500 mb-3 font-sans">
+                        <span class="text-gray-900">By {{ .author }}</span>
+                        <span>{{ .date }}</span>
+                    </div>
+
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4 font-sans flex-grow">
+                        {{ .summary }}
+                    </p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>

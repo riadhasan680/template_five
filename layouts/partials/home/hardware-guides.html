@@ -1,0 +1,152 @@
+{{/* Data Fetching */}}
+{{ $hardwareTags := slice "Hardware" "Hardware Guide" "Gear of the Year" }}
+{{ $hardwarePages := where site.RegularPages "Params.tag" "in" $hardwareTags }}
+
+{{ $reviewTags := slice "Review" "Game Review" }}
+{{ $reviewPages := where site.RegularPages "Params.tag" "in" $reviewTags }}
+
+<div class="max-w-[1280px] mx-auto px-4 pt-14">
+    <!-- Tabs -->
+    <div class="flex">
+        <button id="tab-hardware-btn" onclick="switchTab('hardware')" 
+                class="flex-1 block w-full text-center py-3 px-4 font-bold text-sm uppercase tracking-wide transition-colors bg-white text-black border-t-[5px] border-pcg-red">
+            HARDWARE BUYING GUIDES
+        </button>
+        <button id="tab-reviews-btn" onclick="switchTab('reviews')" 
+                class="flex-1 block w-full text-center py-3 px-4 font-bold text-sm uppercase tracking-wide transition-colors bg-pcg-red text-white hover:bg-[#b30b0e] border-t-[5px] border-pcg-red">
+            LATEST GAME REVIEWS
+        </button>
+    </div>
+
+    <!-- Content -->
+    <div class="bg-[#f2f2f2]">
+        
+        <!-- Hardware Content -->
+        <div id="tab-hardware-content" class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+             {{/* Featured Hardware */}}
+             {{ with index $hardwarePages 0 }}
+             <div class="lg:col-span-8">
+                 <a href="{{ .RelPermalink }}" class="block relative group cursor-pointer h-full">
+                     <div class="relative h-[400px] md:h-full overflow-hidden bg-gray-200">
+                         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+                         <!-- Diamond Badge -->
+                         <div class="absolute top-6 right-6 md:top-10 md:right-16 z-20 pointer-events-none">
+                             <div class="w-32 h-32 md:w-40 md:h-40 bg-pcg-red transform rotate-45 shadow-xl flex items-center justify-center border-[4px] border-white rounded-xl">
+                                 <div class="transform -rotate-45 text-center text-white w-[140%] flex flex-col items-center justify-center pb-1">
+                                     <div class="flex flex-col items-center leading-none mb-1">
+                                         <span class="text-3xl md:text-4xl font-black tracking-tighter" style="font-family: 'Arial Black', sans-serif;">PC</span>
+                                         <span class="bg-black text-white text-[9px] md:text-[11px] font-bold px-1 py-[1px] tracking-wide mt-[-2px] uppercase">Gamer</span>
+                                     </div>
+                                     <div class="text-lg md:text-xl font-semibold uppercase leading-none tracking-tighter scale-y-110 mb-2 mt-1" style="font-family: 'Arial Black', sans-serif;">RECOMMENDED</div>
+                                     <div class="flex justify-center items-center relative w-full px-4">
+                                          <svg class="w-6 h-6 md:w-8 md:h-8 text-white fill-current transform -scale-x-100" viewBox="0 0 100 100">
+                                              <path d="M50,90 Q30,80 20,60 Q10,40 30,20 M30,65 L20,70 M25,50 L15,55 M30,35 L20,40" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" />
+                                          </svg>
+                                          <div class="bg-white rounded-full p-1 mx-1 shadow-sm"><i class="fas fa-star text-pcg-red text-[8px] md:text-[10px]"></i></div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 pt-20">
+                         <h3 class="text-3xl font-bold text-white group-hover:text-pcg-red transition-colors leading-tight drop-shadow-md">{{ .Title }}</h3>
+                     </div>
+                 </a>
+             </div>
+             {{ end }}
+
+             <!-- Hardware List -->
+             <div class="lg:col-span-4 flex flex-col gap-4">
+                 {{ range first 5 (after 1 $hardwarePages) }}
+                 <a href="{{ .RelPermalink }}" class="flex gap-4 group bg-white p-3 hover:shadow-md transition-shadow h-24">
+                     <div class="w-24 h-full flex-shrink-0 bg-gray-200">
+                         <img src="{{ .Params.image }}" class="w-full h-full object-cover">
+                     </div>
+                     <div class="flex-grow overflow-hidden">
+                         <h4 class="font-bold text-sm group-hover:text-pcg-red transition-colors line-clamp-3 leading-snug">{{ .Title }}</h4>
+                     </div>
+                 </a>
+                 {{ end }}
+             </div>
+        </div>
+
+        <!-- Reviews Content -->
+        <div id="tab-reviews-content" class="hidden grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+             {{/* Featured Review */}}
+             {{ with index $reviewPages 0 }}
+             <div class="lg:col-span-8">
+                 <a href="{{ .RelPermalink }}" class="block relative group cursor-pointer h-full">
+                     <div class="relative h-[400px] md:h-full overflow-hidden bg-gray-200">
+                         <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+                         <!-- Review Badge -->
+                         <div class="absolute top-6 right-6 md:top-10 md:right-16 z-20 pointer-events-none">
+                             <div class="w-32 h-32 md:w-40 md:h-40 bg-pcg-red transform rotate-45 shadow-xl flex items-center justify-center border-[4px] border-white rounded-xl">
+                                 <div class="transform -rotate-45 text-center text-white w-[140%] flex flex-col items-center justify-center pb-1">
+                                     <div class="flex flex-col items-center leading-none mb-1">
+                                         <span class="text-3xl md:text-4xl font-black tracking-tighter" style="font-family: 'Arial Black', sans-serif;">PC</span>
+                                         <span class="bg-black text-white text-[9px] md:text-[11px] font-bold px-1 py-[1px] tracking-wide mt-[-2px] uppercase">Gamer</span>
+                                     </div>
+                                     <div class="text-lg md:text-xl font-semibold uppercase leading-none tracking-tighter scale-y-110 mb-2 mt-1" style="font-family: 'Arial Black', sans-serif;">REVIEW</div>
+                                     <div class="text-4xl font-black leading-none mt-1">90%</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 pt-20">
+                         <h3 class="text-3xl font-bold text-white group-hover:text-pcg-red transition-colors leading-tight drop-shadow-md">{{ .Title }}</h3>
+                     </div>
+                 </a>
+             </div>
+             {{ end }}
+
+             <!-- Reviews List -->
+             <div class="lg:col-span-4 flex flex-col gap-4">
+                 {{ range first 5 (after 1 $reviewPages) }}
+                 <a href="{{ .RelPermalink }}" class="flex gap-4 group bg-white p-3 hover:shadow-md transition-shadow h-24">
+                     <div class="w-24 h-full flex-shrink-0 bg-gray-200">
+                         <img src="{{ .Params.image }}" class="w-full h-full object-cover">
+                     </div>
+                     <div class="flex-grow overflow-hidden">
+                         <h4 class="font-bold text-sm group-hover:text-pcg-red transition-colors line-clamp-3 leading-snug">{{ .Title }}</h4>
+                     </div>
+                 </a>
+                 {{ end }}
+             </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function switchTab(tabName) {
+    const hardwareContent = document.getElementById('tab-hardware-content');
+    const reviewsContent = document.getElementById('tab-reviews-content');
+    const hardwareBtn = document.getElementById('tab-hardware-btn');
+    const reviewsBtn = document.getElementById('tab-reviews-btn');
+
+    // Reset styles
+    const activeClass = ['bg-white', 'text-black'];
+    const inactiveClass = ['bg-pcg-red', 'text-white', 'hover:bg-[#b30b0e]'];
+
+    if (tabName === 'hardware') {
+        hardwareContent.classList.remove('hidden');
+        hardwareContent.classList.add('grid');
+        reviewsContent.classList.add('hidden');
+        reviewsContent.classList.remove('grid');
+
+        hardwareBtn.classList.add(...activeClass);
+        hardwareBtn.classList.remove(...inactiveClass);
+        reviewsBtn.classList.remove(...activeClass);
+        reviewsBtn.classList.add(...inactiveClass);
+    } else {
+        reviewsContent.classList.remove('hidden');
+        reviewsContent.classList.add('grid');
+        hardwareContent.classList.add('hidden');
+        hardwareContent.classList.remove('grid');
+
+        reviewsBtn.classList.add(...activeClass);
+        reviewsBtn.classList.remove(...inactiveClass);
+        hardwareBtn.classList.remove(...activeClass);
+        hardwareBtn.classList.add(...inactiveClass);
+    }
+}
+</script>

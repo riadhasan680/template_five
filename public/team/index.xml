@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meet the Team on PC Gamer Template</title>
+    <link>https://example.org/team/</link>
+    <description>Recent content in Meet the Team on PC Gamer Template</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/team/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dave James</title>
+      <link>https://example.org/team/dave-james/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/team/dave-james/</guid>
+      <description>&lt;p&gt;Dave has been gaming since the days of Zork and Lode Runner. He built his first gaming PC at the tender age of 16, and hasn&amp;rsquo;t stopped tearing them apart since. When he&amp;rsquo;s not testing the latest GPUs or mechanical keyboards, you can find him complaining about the lack of good RTS games.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fraser Brown</title>
+      <link>https://example.org/team/fraser-brown/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/team/fraser-brown/</guid>
+      <description>&lt;p&gt;Fraser lives for map painting simulators and 4X strategy games. If it involves managing an economy or conquering Europe, he&amp;rsquo;s playing it. He&amp;rsquo;s also the resident expert on everything Warhammer related.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lauren Morton</title>
+      <link>https://example.org/team/lauren-morton/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/team/lauren-morton/</guid>
+      <description>&lt;p&gt;Lauren loves RPGs, survival games, and farming sims. She&amp;rsquo;s usually busy building a base in Valheim or romancing characters in Baldur&amp;rsquo;s Gate 3.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Robin Valentine</title>
+      <link>https://example.org/team/robin-valentine/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/team/robin-valentine/</guid>
+      <description>&lt;p&gt;Robin has spent far too much money on plastic miniatures. He covers the intersection of tabletop and digital gaming, RPGs, and anything with a good narrative hook.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tyler Wilde</title>
+      <link>https://example.org/team/tyler-wilde/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/team/tyler-wilde/</guid>
+      <description>&lt;p&gt;Tyler has been covering competitive gaming for over a decade. From CS:GO majors to The International, he&amp;rsquo;s seen it all. He also has a soft spot for weird indie games.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wes Fenlon</title>
+      <link>https://example.org/team/wes-fenlon/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/team/wes-fenlon/</guid>
+      <description>&lt;p&gt;Wes is obsessed with emulation, CRTs, and preserving gaming history. He&amp;rsquo;s the guy to ask if you want to know the best way to play PS2 games on a modern PC.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

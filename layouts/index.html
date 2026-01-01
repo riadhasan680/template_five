@@ -1,0 +1,52 @@
+{{ define "main" }}
+    <!-- Ads Section -->
+    {{ partial "home/ads.html" . }}
+    
+    <!-- Tabs Section -->
+    {{ partial "home/tabs.html" . }}
+
+    <!-- Featured Grid Section (New Design) -->
+    {{ partial "home/featured-grid.html" . }}
+
+    <!-- Latest Videos Section -->
+    {{ partial "home/latest-videos.html" . }}
+    
+    <!-- Latest Updates Section -->
+    {{ partial "home/latest-updates.html" . }}
+
+    <!-- Hardware Guides Section -->
+    {{ partial "home/hardware-guides.html" . }}
+
+    <!-- Meet The Team Section -->
+    {{ partial "home/meet-the-team.html" . }}
+
+    <!-- Latest Guides Section -->
+    {{ partial "home/latest-guides.html" . }}
+
+    <!-- More Updates Section -->
+    {{ partial "home/more-updates.html" . }}
+
+    <!-- More Updates Bottom Section -->
+    {{ partial "home/more-updates-bottom.html" . }}
+
+    <!-- Newsletter Section -->
+    {{ partial "home/newsletter.html" . }}
+
+    <!-- Latest Codes Section -->
+    {{ partial "home/latest-codes.html" . }}
+
+
+    <!-- Main Content Area (Old - Commented out as per request for new design) -->
+    <!-- 
+    <div class="max-w-[1280px] mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-8 space-y-8">
+                {{ partial "home/hero.html" . }}
+                {{ partial "home/news-grid.html" . }}
+            </div>
+            
+            {{ partial "home/sidebar.html" . }}
+        </div>
+    </div>
+    -->
+{{ end }}

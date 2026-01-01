@@ -1,0 +1,631 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: PC Gamer Template
+
+menus:
+  main:
+    - name: Home
+      url: /
+      weight: 10
+      pre: <i class="fas fa-home"></i>
+    - name: Games
+      url: /tags/games
+      weight: 20
+    - name: Hardware
+      url: /tags/hardware-guide
+      weight: 30
+    - name: News
+      url: /tags/news
+      weight: 40
+    - name: Reviews
+      url: /tags/review
+      weight: 50
+    - name: Guides
+      url: /tags/hardware-guide
+      weight: 60
+    - name: Video
+      url: /tags/video
+      weight: 70
+    - name: Forum
+      url: /tags/forum
+      weight: 80
+    - name: More
+      url: /more
+      weight: 90
+      identifier: more
+      post: <i class="fas fa-caret-down ml-1"></i>
+    - name: PC Gaming Show
+      url: /tags/pc-gaming-show
+      weight: 100
+      parent: more
+    - name: Software
+      url: /tags/software
+      weight: 110
+      parent: more
+    - name: Movies & TV
+      url: /tags/movies--tv
+      weight: 120
+      parent: more
+    - name: Codes
+      url: /tags/codes
+      weight: 130
+      parent: more
+    - name: Coupons
+      url: /tags/coupons
+      weight: 140
+      parent: more
+    - name: Magazine
+      url: /magazine
+      weight: 150
+      parent: more
+    - name: Newsletter
+      url: /newsletter
+      weight: 160
+      parent: more
+    - name: Affiliate links
+      url: /affiliate
+      weight: 170
+      parent: more
+    - name: Meet the team
+      url: /team
+      weight: 180
+      parent: more
+    - name: Community guidelines
+      url: /guidelines
+      weight: 190
+      parent: more
+    - name: About PC Gamer
+      url: /about
+      weight: 200
+      parent: more
+
+params:
+  editions:
+    - name: UK
+      flag: 🇬🇧
+      url: "#"
+      active: false
+    - name: US
+      flag: 🇺🇸
+      url: "#"
+      active: true
+    - name: Canada
+      flag: 🇨🇦
+      url: "#"
+      active: false
+    - name: Australia
+      flag: 🇦🇺
+      url: "#"
+      active: false
+  social:
+    - name: steam
+      icon: fab fa-steam
+      url: "#"
+      bg_color: "bg-[#171a21]"
+    - name: facebook
+      icon: fab fa-facebook-f
+      url: "#"
+      bg_color: "bg-[#1877F2]"
+    - name: twitter
+      icon: fab fa-x-twitter
+      url: "#"
+      bg_color: "bg-[#1DA1F2]"
+    - name: instagram
+      icon: fab fa-instagram
+      url: "#"
+      bg_color: "bg-[#E4405F]"
+    - name: youtube
+      icon: fab fa-youtube
+      url: "#"
+      bg_color: "bg-[#FF0000]"
+    - name: twitch
+      icon: fab fa-twitch
+      url: "#"
+      bg_color: "bg-[#9146FF]"
+    - name: flipboard
+      icon: fab fa-flipboard
+      url: "#"
+      bg_color: "bg-[#F52828]"
+    - name: tiktok
+      icon: fab fa-tiktok
+      url: "#"
+      bg_color: "bg-[#ff0050]"
+
+  tabs:
+    - name: POPULAR
+      url: "/"
+      active: true
+    - name: GOTY Awards
+      url: "/tags/goty-awards"
+      active: false
+    - name: Fallout Season 2
+      url: "/tags/fallout-season-2"
+      active: false
+    - name: Best PC gear
+      url: "/tags/best-pc-gear"
+      active: false
+    - name: Arc Raiders
+      url: "/tags/arc-raiders"
+      active: false
+    - name: Quizzes
+      url: "/tags/quizzes"
+      active: false
+
+  featured_section:
+    main_feature:
+      title: "'Friendslop' dominated 2025 by proving time and time again that graphics are overrated"
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      tag: "LOOKS GOOD"
+      url: "/posts/friendslop-dominated-2025-by-proving-time-and-time-again-that-graphics-are-overrated/"
+    sub_features:
+      - title: "AI, Crysis, lusty argonians, and pinball: These are our most-read news stories of 2025"
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "NEWS OF 2025"
+        url: "/posts/ai-crysis-lusty-argonians-and-pinball-these-are-our-most-read-news-stories-of-2025/"
+      - title: "Love it or hate it, but frame generation is the one major graphics technology that really needs improving in 2026"
+        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "NEXT GEN"
+        url: "/posts/love-it-or-hate-it-but-frame-generation-is-the-one-major-graphics-technology-that-really-needs-improving-in-2026/"
+      - title: "Last year I predicted all three of Valve's announcements so now I reckon I have the ability to speak these 2026 prophecies into reality"
+        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "I KNOW THE FUTURE"
+        comments: 22
+        url: "/posts/last-year-i-predicted-all-three-of-valves-announcements-so-now-i-reckon-i-have-the-ability-to-speak-these-2026-prophecies-into-reality/"
+      - title: "'A good idea, infinite drive, and lots of Diet Pepsi': How YouTube essayist Majuular's life changed course telling the story of Ultima across 2 years and more than 20 hours of documentaries"
+        image: "https://images.unsplash.com/photo-1612287230217-969b698c0a12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: ""
+        comments: 9
+        url: "/posts/a-good-idea-infinite-drive-and-lots-of-diet-pepsi-how-youtube-essayist-majuulars-life-changed-course-telling-the-story-of-ultima-across-2-years-and-more-than-20-hours-of-documentaries/"
+    news_stream:
+      - title: "Some of my favorite childhood platformers are free on Epic for today only, and they've all been updated for better crossplay with Steam owners"
+        image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+        url: "/posts/some-of-my-favorite-childhood-platformers-are-free-on-epic-for-today-only-and-theyve-all-been-updated-for-better-crossplay-with-steam-owners/"
+      - title: "Arc Raiders was Steam's best-selling game the week of Christmas, and Battlefield 6 wasn't far behind"
+        image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+        url: "/posts/arc-raiders-was-steams-best-selling-game-the-week-of-christmas-and-battlefield-6-wasnt-far-behind/"
+      - title: "None of us are at good at action RPGs as the Path of Exile 2 player who beat one of its toughest bosses without any gear: 'What did I just witness?'"
+        image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+        url: "/posts/none-of-us-are-at-good-at-action-rpgs-as-the-path-of-exile-2-player-who-beat-one-of-its-toughest-bosses-without-any-gear-what-did-i-just-witness/"
+      - title: "Fallen Aces's second episode won't be out this year, but it will feature a first-person car chase with a tommy gun in both hands and a foot-operated steering wheel"
+        text_only: true
+        url: "/posts/fallen-acess-second-episode-wont-be-out-this-year-but-it-will-feature-a-first-person-car-chase-with-a-tommy-gun-in-both-hands-and-a-foot-operated-steering-wheel/"
+      - title: "Rainbow Six Siege servers are back after hackers randomly doled out bans, unbans, rare skins and 'billions' in in-game currency"
+        text_only: true
+        url: "/posts/rainbow-six-siege-servers-are-back-after-hackers-randomly-doled-out-bans-unbans-rare-skins-and-billions-in-in-game-currency/"
+      - title: "GOG crawls out from under CD Projekt Red with a new owner and teases 'ambitious' plans for classic game 'rescue missions' starting next year"
+        text_only: true
+        url: "/posts/gog-crawls-out-from-under-cd-projekt-red-with-a-new-owner-and-teases-ambitious-plans-for-classic-game-rescue-missions-starting-next-year/"
+      - title: "Slay the Spire gets the best Christmas present a deckbuilder could ask for: a new all-time concurrent player peak on Steam nearly 7 years after release"
+        text_only: true
+        url: "/posts/slay-the-spire-gets-the-best-christmas-present-a-deckbuilder-could-ask-for-a-new-all-time-concurrent-player-peak-on-steam-nearly-7-years-after-release/"
+
+  latest_videos:
+    featured:
+      title: "Arc Raiders dev on art style, player feedback and the game's '10 year plan' | Developer debrief"
+      description: "Arc Raiders is redefining the extraction shooter after a successful 2025 launch. We sat down with Embark Studios' Art Director Robert Sammelin to discuss the art style of the game, how Embark implements player feedback and the studio's long-term vision."
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      url: "/posts/arc-raiders-dev-on-art-style-player-feedback-and-the-games-10-year-plan-developer-debrief/"
+      duration: "12:34"
+    list:
+      - title: "Divinity: Larian Studios on their most ambitious RPG yet | Developer debrief"
+        image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        url: "/posts/divinity-larian-studios-on-their-most-ambitious-rpg-yet-developer-debrief/"
+      - title: "We tested Valve's NEW hardware: Steam Frame, Steam Machine and Steam Controller | Critical Rig"
+        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        url: "/posts/we-tested-valves-new-hardware-steam-frame-steam-machine-and-steam-controller-critical-rig/"
+      - title: "We need to talk about Katamari Damacy"
+        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        url: "/posts/we-need-to-talk-about-katamari-damacy/"
+      - title: "F.E.A.R: Still as iconic 20 years later? | Why We Play"
+        image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        url: "/posts/fear-still-as-iconic-20-years-later-why-we-play/"
+
+  latest_updates:
+    featured:
+      title: "PC Gamer's Game of the Year Awards 2025"
+      image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      tag: "THE GOTYS"
+      comments: 95
+      url: "/posts/pc-gamers-game-of-the-year-awards-2025/"
+    row_1:
+      - title: "Have yourself a merry, ray-traced Christmas"
+        summary: "Gigabyte-powered PCs with Nvidia GPUs will bring the smiles this festive season"
+        image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "SPONSORED"
+        url: "/posts/have-yourself-a-merry-ray-traced-christmas/"
+      - title: "The most surprising cozy game trend this year was the desktop pet renaissance"
+        summary: "Desktop pets are back, bigger than ever, and surprisingly vibrant."
+        author: "Lauren Morton"
+        time: "1 hour ago"
+        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "COMPUTER CRITTERS"
+        url: "/posts/the-most-surprising-cozy-game-trend-this-year-was-the-desktop-pet-renaissance/"
+      - title: "2025 was Fortnite's most topsy-turvy year ever with soaring peaks, miserable lows, and a raging AI debate"
+        summary: "Plenty of reasons to be optimistic—and a few concerns"
+        author: "Samuel Horti"
+        time: "18 hours ago"
+        image: "https://images.unsplash.com/photo-1589241062272-c0a000072dfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "EPIC JOURNEY"
+        url: "/posts/2025-was-fortnites-most-topsy-turvy-year-ever-with-soaring-peaks-miserable-lows-and-a-raging-ai-debate/"
+    row_2:
+      - title: "Razer's little Blade has been my ride-or-die throughout the year and is my absolute favourite gaming laptop of 2025"
+        summary: "Through thick and thin."
+        author: "Dave James"
+        time: "19 hours ago"
+        image: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "GEAR OF THE YEAR"
+        url: "/posts/razers-little-blade-has-been-my-ride-or-die-throughout-the-year-and-is-my-absolute-favourite-gaming-laptop-of-2025/"
+      - title: "PC Gamer Hardware Awards: 2025's wildcards—the best of the rest is full of surprises"
+        summary: "Wildcards keep us guessing every year, shedding light on the hardware hits that don't easily fit into a neat category elsewhere."
+        author: "Jess Kinghorn"
+        time: "21 hours ago"
+        image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "GEAR OF THE YEAR"
+        url: "/posts/pc-gamer-hardware-awards-2025s-wildcardsthe-best-of-the-rest-is-full-of-surprises/"
+      - title: "Can you order the games of 2025 by their release dates? Sort out the year's release calendar in our latest quiz!"
+        summary: "Let's see how well you remember the last 12 months."
+        author: "Christopher Livingston"
+        time: "22 hours ago"
+        image: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "LET'S DATE"
+        badge: "Quiz"
+        url: "/posts/can-you-order-the-games-of-2025-by-their-release-dates-sort-out-the-years-release-calendar-in-our-latest-quiz/"
+    row_3:
+      - title: "12 years on, relentless survival game Rust is showing no signs of slowing."
+        summary: "Have yourself a very Rusty Christmas."
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "SPONSORED"
+        url: "/posts/12-years-on-relentless-survival-game-rust-is-showing-no-signs-of-slowing/"
+      - title: "PC Gamer Hardware Awards: The best graphics card of 2025"
+        summary: "A whole new generation of graphics cards dropped this year, but which can take the crown?"
+        author: "Dave James"
+        time: "23 hours ago"
+        image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "GEAR OF THE YEAR"
+        url: "/posts/pc-gamer-hardware-awards-the-best-graphics-card-of-2025/"
+      - title: "2025's best soulslike wasn't Nightreign, it was a DLC for a game we all dismissed as a Bloodborne clone back in 2022"
+        summary: "Lies of P: Overture is a game no longer held down by its own strings."
+        author: "Harvey Randall"
+        time: "yesterday"
+        image: "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "NO LIE"
+        url: "/posts/2025s-best-soulslike-wasnt-nightreign-it-was-a-dlc-for-a-game-we-all-dismissed-as-a-bloodborne-clone-back-in-2022/"
+      - title: "All active Fisch codes in December 2025 and how to redeem them"
+        summary: "Cast aside your worries and get ready to catch some big game."
+        author: "Shaun Cichacki"
+        time: "2 days ago"
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        tag: "GONE FISCHING"
+        url: "/posts/fisch-codes/"
+
+  hardware_guides:
+    tabs:
+      - name: "HARDWARE BUYING GUIDES"
+        active: true
+        url: "/posts/all-active-fisch-codes-in-december-2025-and-how-to-redeem-them/"
+      - name: "LATEST GAME REVIEWS"
+        active: false
+        url: "#"
+    featured:
+      number: "1"
+      title: "Best gaming monitors in 2025: the pixel-perfect panels I'd buy myself"
+      image: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      url: "/posts/best-gaming-monitors-in-2025-the-pixel-perfect-panels-id-buy-myself/"
+    list:
+      - number: "2"
+        title: "The best fish tank PC case in 2025: I've tested heaps of stylish chassis but only a few have earned my recommendation"
+        url: "/posts/the-best-fish-tank-pc-case-in-2025-ive-tested-heaps-of-stylish-chassis-but-only-a-few-have-earned-my-recommendation/"
+      - number: "3"
+        title: "Best gaming laptop 2025: I've tested the best laptops for gaming of this generation and here are the ones I recommend"
+        url: "/posts/best-gaming-laptop-2025-ive-tested-the-best-laptops-for-gaming-of-this-generation-and-here-are-the-ones-i-recommend/"
+      - number: "4"
+        title: "Best Hall effect keyboards in 2025: the fastest, most customizable keyboards for competitive gaming"
+        url: "/posts/best-hall-effect-keyboards-in-2025-the-fastest-most-customizable-keyboards-for-competitive-gaming/"
+      - number: "5"
+        title: "Best PCIe 5.0 SSD for gaming in 2025: the only Gen 5 drives I will allow in my PC"
+        url: "/posts/best-pcie-50-ssd-for-gaming-in-2025-the-only-gen-5-drives-i-will-allow-in-my-pc/"
+
+  meet_the_team:
+    title: "MEET THE TEAM"
+    members:
+      - name: "Dave James"
+        role: "Hardware Lead, still owns a TRS-80"
+        image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        color: "#fcd34d" # yellow
+        url: "/team/dave-james/"
+      - name: "Fraser Brown"
+        role: "Online Editor, grand strategy evangelist"
+        image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        color: "#f472b6" # pink
+        url: "/team/fraser-brown/"
+      - name: "Robin Valentine"
+        role: "Senior Editor, toy soldier enthusiast"
+        image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        color: "#4ade80" # green
+        url: "/team/robin-valentine/"
+      - name: "Wes Fenlon"
+        role: "Senior Editor, scanline junkie"
+        image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        color: "#fbbf24" # orange
+        url: "/team/wes-fenlon/"
+      - name: "Lauren Morton"
+        role: "Associate Editor, RPG fanatic"
+        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        color: "#60a5fa" # blue
+        url: "/team/lauren-morton/"
+      - name: "Tyler Wilde"
+        role: "Executive Editor, esports expert"
+        image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        color: "#a78bfa" # purple
+        url: "/team/tyler-wilde/"
+
+  latest_guides:
+    title: "LATEST GUIDES"
+    view_more_url: "#"
+    items:
+      - title: "What's free on the Epic Games Store right now?"
+        image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "FREE STUFF"
+        author: "Lauren Morton"
+        date: "last updated 18 minutes ago"
+        summary: "Stay up to date on what games Epic is giving away each week this year."
+        comments: "11 Comments"
+        url: "/posts/latest-guides/"
+      - title: "007 First Light: All the key details on IO Interactive's upcoming stealth action game"
+        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "ICEBREAKER"
+        author: "Tyler Colp"
+        date: "last updated 24 December 2025"
+        summary: "Agent 47 walked so 007 could run."
+        comments: ""
+        url: "/posts/007-first-light-all-the-key-details-on-io-interactives-upcoming-stealth-action-game/"
+      - title: "Upcoming 2026 games: All the new PC games you won't want to miss, from big hits to hidden gems"
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "FUTURE PROOF"
+        author: "Andrea Shearon"
+        date: "last updated 23 December 2025"
+        summary: "We're still waiting on a GTA 6 PC release date."
+        comments: "20 Comments"
+        title_color: "text-pcg-red" # Optional: for red title like in design
+        url: "/posts/upcoming-2026-games-all-the-new-pc-games-you-wont-want-to-miss-from-big-hits-to-hidden-gems/"
+      - title: "Fortnite's Chapter 7 map guide: Where to land, boss locations, mythics and hot-air balloons"
+        image: "https://images.unsplash.com/photo-1589241062272-c0a000072dfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "DROP IN"
+        author: "Samuel Horti"
+        date: "last updated 23 December 2025"
+        summary: "Glide your way to victory with the hottest drop spots."
+        comments: ""
+        url: "/posts/fortnites-chapter-7-map-guide-where-to-land-boss-locations-mythics-and-hot-air-balloons/"
+      - title: "How to get the Arcane Pickaxe in The Forge"
+        image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "STAR BRIGHT"
+        author: "Andrea Shearon"
+        date: "published 23 December 2025"
+        summary: "It's the best Pickaxe in The Forge, for now."
+        comments: ""
+        url: "/posts/how-to-get-the-arcane-pickaxe-in-the-forge/"
+      - title: "99 Nights in the Forest Christmas update—Everything to know about the elves, candy canes, and weekly updates"
+        image: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "GIFT GUIDE"
+        category_icon: "fas fa-gift" # optional icon support
+        author: "Andrea Shearon"
+        date: "last updated 22 December 2025"
+        summary: "The Deer gets coal, but the rest of you get presents if you survive."
+        comments: ""
+        url: "/posts/99-nights-in-the-forest-christmas-updateeverything-to-know-about-the-elves-candy-canes-and-weekly-updates/"
+
+  more_updates:
+    title: "MORE UPDATES"
+    top_banner:
+      title: "The top 100 PC games"
+      subtitle: "2025 Edition"
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      category: "CLASS OF 2025"
+      url: "/posts/the-top-100-pc-games/"
+    items:
+      - title: "Can you order the games of 2025 by their release dates? Sort out the year's release calendar in our latest quiz!"
+        image: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "LET'S DATE"
+        category_bg: "bg-pcg-red"
+        author: "Christopher Livingston"
+        date: "published yesterday"
+        summary: "Let's see how well you remember the last 12 months."
+        url: "/posts/can-you-order-the-games-of-2025-by-their-release-dates-sort-out-the-years-release-calendar-in-our-latest-quiz/"
+      - title: "PC Gamer Hardware Awards: The best graphics card of 2025"
+        image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "GEAR OF THE YEAR"
+        category_bg: "bg-pcg-red"
+        author: "Jacob Ridley"
+        date: "published 2 days ago"
+        summary: "A whole new generation of graphics cards dropped this year, but which card did the crown?"
+        url: "/posts/pc-gamer-hardware-awards-the-best-graphics-card-of-2025/"
+      - title: "2025 is best as a killer mech roguelike, it was a DLC for a game we all dismissed as a Bloodborne clone back in 2023"
+        image: "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "ROLLS"
+        category_bg: "bg-pcg-red"
+        author: "Harvey Randall"
+        date: "published yesterday"
+        summary: "Lies of P: Overturn is a game no longer held down by its own strings."
+        url: "/posts/2025-is-best-as-a-killer-mech-roguelike-it-was-a-dlc-for-a-game-we-all-dismissed-as-a-bloodborne-clone-back-in-2023/"
+      - title: "All active PlsDonate codes in December 2025 and how to redeem them"
+        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "DONATE TODAY"
+        category_bg: "bg-pcg-red"
+        author: "Shaun Cubrock"
+        date: "last updated 2 days ago"
+        summary: "Cast aside your worries and get ready to catch some big game."
+        url: "/posts/all-active-plsdonate-codes-in-december-2025-and-how-to-redeem-them/"
+      - title: "Path of Exile 2 sees a crud classic in the most fun you can have being a bear in a videogame right now"
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "BEAR NEWS"
+        category_bg: "bg-pcg-red"
+        author: "Fraser Brown"
+        date: "published 2 days ago"
+        summary: "I can bear-ly contain myself."
+        url: "/posts/path-of-exile-2-sees-a-crud-classic-in-the-most-fun-you-can-have-being-a-bear-in-a-videogame-right-now/"
+      - title: "I played 31 new cozy games this year, and my top 6 picks are all completely different"
+        image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "COZY UP"
+        category_bg: "bg-pcg-red"
+        author: "Kara Phillips"
+        date: "published 2 days ago"
+        summary: "Sometimes you just have to try something new."
+        comments: "11 Comments"
+        url: "/posts/i-played-31-new-cozy-games-this-year-and-my-top-6-picks-are-all-completely-different/"
+      - title: "Have yourself a merry ray-traced Christmas"
+        image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "SPONSORED"
+        category_bg: "bg-orange-500"
+        author: "Gigabyte AORUS"
+        date: ""
+        summary: "Gigabyte powered PCs with Nvidia GPUs will bring the smiles this festive season."
+        url: "/posts/have-yourself-a-merry-ray-traced-christmas/"
+      - title: "2025 is the year I discovered I love charging docks, and it's a showcase of one surprisingly necessity piece of gaming mouse"
+        image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "GEAR OF THE YEAR"
+        category_bg: "bg-pcg-red"
+        author: "James F"
+        date: "published yesterday"
+        summary: "It's the what where do it."
+        url: "/posts/2025-is-the-year-i-discovered-i-love-charging-docks-and-its-a-showcase-of-one-surprisingly-necessity-piece-of-gaming-mouse/"
+      - title: "2025 has been the pinnacle of weird and interesting videogames, and for me, not a single one can define the year as a whole"
+        image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "YEAR IN REVIEW"
+        category_bg: "bg-pcg-red"
+        author: "Mollie Taylor"
+        date: "published 2 days ago"
+        summary: "A veritable pick 'n' mix of everything tasty is now my only option for the 2025 big picture."
+        url: "/posts/2025-has-been-the-pinnacle-of-weird-and-interesting-videogames-and-for-me-not-a-single-one-can-define-the-year-as-a-whole/"
+      - title: "Peak shows you don't need horror or quirky party games to be one of the best co-ops in years"
+        image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "?"
+        category_bg: "bg-pcg-red"
+        author: "Mollie Taylor"
+        date: "published 2 days ago"
+        summary: "Be prepared, be Peak."
+        url: "/posts/peak-shows-you-dont-need-horror-or-quirky-party-games-to-be-one-of-the-best-co-ops-in-years/"
+
+  more_updates_bottom:
+    featured:
+      title: "Upcoming 2026 games: All the new PC games you won't want to miss, from big hits to hidden gems"
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      category: "FUTURE PROOF"
+      url: "/posts/upcoming-2026-games-all-the-new-pc-games-you-wont-want-to-miss-from-big-hits-to-hidden-gems/"
+      comments: "20 Comments"
+    items:
+      - title: "We're living in the new golden age of 3D beat-'em-ups—but the best one released this year had one foot in a different genre entirely"
+        image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "PERSONA"
+        category_bg: "bg-pcg-red"
+        author: "Robin Valentine"
+        date: "published 3 days ago"
+        summary: "Abso-Zym offers a vision of the future for a 40 year old formula."
+        url: "/posts/were-living-in-the-new-golden-age-of-3d-beat-em-upsbut-the-best-one-released-this-year-had-one-foot-in-a-different-genre-entirely/"
+      - title: "Your last moment to get into gaming on your PC"
+        image: "https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "SUBSCRIBE"
+        category_bg: "bg-pcg-red"
+        author: "Subscribe & save now"
+        date: ""
+        summary: "Subscribe & save now."
+        url: "/posts/your-last-moment-to-get-into-gaming-on-your-pc/"
+      - title: "PC Gamer Hardware Awards: The best gaming microphone of 2025"
+        image: "https://images.unsplash.com/photo-1590845947698-8924d7409b56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "GEAR OF THE YEAR"
+        category_bg: "bg-pcg-red"
+        author: "Jorge Jimenez"
+        date: "published 3 days ago"
+        summary: "Join me for a look back at the microphone movers of 2025."
+        url: "/posts/pc-gamer-hardware-awards-the-best-gaming-microphone-of-2025/"
+      - title: "PC Gamer Hardware Awards: The best gaming headset of 2025"
+        image: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "GEAR OF THE YEAR"
+        category_bg: "bg-pcg-red"
+        author: "Andy Edser"
+        date: "published 2 days ago"
+        summary: "It's been a helluva year for gaming headsets, but which of our three contenders will take the ultimate prize?"
+        url: "/posts/pc-gamer-hardware-awards-the-best-gaming-headset-of-2025/"
+      - title: "Well, this year's graphics card launches were a bit of a letdown, eh?"
+        image: "https://images.unsplash.com/photo-1555617778-02518510b9fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "DISAPPOINTING ACTION"
+        category_bg: "bg-pcg-red"
+        author: "Dave James"
+        date: "published 2 days ago"
+        summary: "This year saw the arrival a rush of new GPU generation from remember thrilling 2021, not so a rush, more a..."
+        url: "/posts/well-this-years-graphics-card-launches-were-a-bit-of-a-letdown-eh/"
+      - title: "I hate tracing old pastels in school, but this artist has made me want to give them a second chance thanks to their adorable, low-poly video game character paintings"
+        image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "PRETTY PICTURE"
+        category_bg: "bg-pcg-red"
+        author: "Elie Gould"
+        date: "published 3 days ago"
+        summary: "Low poly, high quality."
+        url: "/posts/i-hate-tracing-old-pastels-in-school-but-this-artist-has-made-me-want-to-give-them-a-second-chance-thanks-to-their-adorable-low-poly-video-game-character-paintings/"
+      - title: "Steam has quietly become the best place to buy video game soundtracks—even for games that were never released on PC"
+        image: "https://images.unsplash.com/photo-1495563923587-bdc4282494d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "GOOD NEWS"
+        category_bg: "bg-pcg-red"
+        author: "Tyler Colp"
+        date: "published 3 days ago"
+        summary: "It makes me happy to buy their soundtracks, and each was rewarding to own in a different way."
+        comments: "7 Comments"
+        url: "/posts/steam-has-quietly-become-the-best-place-to-buy-video-game-soundtrackseven-for-games-that-were-never-released-on-pc/"
+      - title: "The Fractal Design Scape feels like a gaming headset from the future, which makes it the best thing I've tested in 2025. I mean, this year"
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "GEAR OF THE YEAR"
+        category_bg: "bg-pcg-red"
+        author: "Jacob Ridley"
+        date: "published 17 November 2025"
+        summary: "I've seen the light, and don't want to go back."
+        comments: "15 Comments"
+        url: "/posts/the-fractal-design-scape-feels-like-a-gaming-headset-from-the-future-which-makes-it-the-best-thing-ive-tested-in-2025-i-mean-this-year/"
+      - title: "I played more than 30 metroidvanias this year other than Silksong, and these are the ones doing the most creative, experimental things with the genre"
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "TEAM SILKSONG"
+        category_bg: "bg-pcg-red"
+        author: "Lauren Morton"
+        date: "published 20 December 2025"
+        summary: "Actually unpacked Silksong fillers and other platformers evolving from concepts."
+        comments: "7 Comments"
+        url: "/posts/i-played-more-than-30-metroidvanias-this-year-other-than-silksong-and-these-are-the-ones-doing-the-most-creative-experimental-things-with-the-genre/"
+      - title: "I'm obsessed with detective games, and I think these 9 prove that 2025 was the best year for the genre ever"
+        image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "CASE CLOSED"
+        category_bg: "bg-pcg-red"
+        author: "Jody Macgregor"
+        date: "published 20 June 2025"
+        summary: "It's a real genre renaissance out there, chief."
+        url: "/posts/im-obsessed-with-detective-games-and-i-think-these-9-prove-that-2025-was-the-best-year-for-the-genre-ever/"
+
+  newsletter:
+    title: "The biggest gaming news, reviews and hardware deals"
+    description: "Keep up to date with the most important stories and the best deals, as picked by the PC Gamer team."
+    button_text: "SIGN ME UP"
+    terms_url: "#"
+    privacy_url: "#"
+
+  latest_codes:
+    title: "LATEST CODES"
+    view_more_url: "#"
+    items:
+      - title: "All Roblox Rivals codes and how to redeem them"
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "HOLD FIRE"
+        author: "Kara Phillips"
+        date: "last updated 15 hours ago"
+        summary: "Redeem these codes for community wraps and keys."
+        url: "/posts/roblox-rivals/"
+      - title: "All Universal Tower Defense codes for December 2025: Gems and Trait Rerolls"
+        image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "BATTLE READY"
+        author: "Kara Phillips"
+        date: "last updated 2 days ago"
+        summary: "All active Universal Tower Defense codes for Gems and Trait Rerolls."
+        url: "/posts/universal-tower-defense/"
+      - title: "The Forge codes for December 2025: Free rerolls and Luck Totems"
+        image: "https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        category: "HAMMER ON"
+        author: "Andrea Shearon"
+        date: "last updated 2 days ago"
+        summary: "All active The Forge codes to redeem for extra rerolls."
+        url: "/posts/the-forge-codes-for-december-2025-free-rerolls-and-luck-totems/"

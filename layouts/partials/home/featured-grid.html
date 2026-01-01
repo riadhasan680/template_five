@@ -1,0 +1,86 @@
+<div class="pt-14">
+    <div class="max-w-[1280px] mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Content: Feature Grid (70% width approx on large screens) -->
+            <div class="lg:col-span-8 flex flex-col gap-6">
+                <!-- Main Feature (Large) -->
+                {{ with .Site.Params.featured_section.main_feature }}
+                <a href="{{ .url }}" class="group relative block w-full bg-pcg-black overflow-hidden h-[400px]">
+                    <img src="{{ .image }}" alt="{{ .title }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    
+                    <!-- Tag -->
+                    {{ if .tag }}
+                    <span class="absolute top-0 left-0 bg-pcg-red text-white text-sm font-semibold px-4 py-3 uppercase">{{ .tag }}</span>
+                    {{ end }}
+
+                    <!-- Content Overlay -->
+                    <div class="absolute bottom-0 left-0 w-full bg-pcg-black p-6">
+                        <h2 class="text-white font-display font-bold text-2xl md:text-3xl leading-tight group-hover:text-pcg-red transition-colors">
+                            {{ .title }}
+                        </h2>
+                    </div>
+                </a>
+                {{ end }}
+
+                <!-- Sub Features (Grid of 4) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {{ range .Site.Params.featured_section.sub_features }}
+                    <a href="{{ .url }}" class="group block bg-pcg-black h-full flex flex-col">
+                         <div class="relative aspect-video overflow-hidden">
+                             <img src="{{ .image }}" alt="{{ .title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                             {{ if .tag }}
+                             <span class="absolute top-0 left-0 bg-pcg-red text-white text-[12px] font-semibold px-2 py-1 uppercase">{{ .tag }}</span>
+                             {{ end }}
+                         </div>
+                         <div class="p-4 flex-1 flex flex-col justify-between">
+                             <h3 class="text-white font-bold text-lg leading-tight mb-3 group-hover:text-pcg-red transition-colors">
+                                 {{ .title }}
+                             </h3>
+                             {{ if .comments }}
+                             <div class="flex items-center text-gray-400 text-xs font-semibold mt-2">
+                                 <i class="fas fa-comment-alt mr-1.5 text-[12px] text-pcg-red"></i> {{ .comments }} Comments
+                             </div>
+                             {{ end }}
+                         </div>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+
+            <!-- Right Content: News Stream (30% width approx) -->
+            <div class="lg:col-span-4">
+                <!-- Header -->
+                <div class="bg-pcg-red text-white font-bold uppercase text-lg px-4 py-3 relative mb-4">
+                    News Stream
+                    <!-- Triangle pointer -->
+                    <div class="absolute bottom-[-8px] left-48 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-pcg-red"></div>
+                </div>
+
+                <!-- List -->
+                <div class="space-y-6 pt-12">
+                    {{ range .Site.Params.featured_section.news_stream }}
+                    <article class="group">
+                        <a href="{{ .url }}" class="flex gap-4 items-start">
+                             {{ if not .text_only }}
+                             <div class="flex-shrink-0 w-24 h-16 bg-gray-200 overflow-hidden">
+                                 <img src="{{ .image }}" alt="Thumbnail" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                             </div>
+                             {{ end }}
+                             <div class="flex-1">
+                                 <h4 class="text-gray-900 font-medium text-lg leading-snug group-hover:text-pcg-red transition-colors">
+                                     {{ .title }}
+                                 </h4>
+                             </div>
+                        </a>
+                    </article>
+                    {{ end }}
+                </div>
+
+                <!-- More News Button -->
+                <a href="#" class="block w-full bg-white border border-gray-300 text-pcg-red font-bold text-center text-xs uppercase py-3 mt-8 hover:bg-gray-50 transition-colors">
+                    More News <i class="fas fa-caret-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

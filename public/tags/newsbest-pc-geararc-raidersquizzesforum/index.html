@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+  NewsBest PC GearArc RaidersQuizzesForum | PC Gamer Template
+</title>
+
+<link rel="stylesheet" href="http://localhost:1313/css/main.css" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@500;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+  </head>
+  <body class="bg-[#f2f2f2] text-black font-sans antialiased">
+    <header class="sticky top-0 z-50 flex flex-col">
+  
+  <div class="bg-pcg-black text-white h-14 relative z-50 px-4">
+    <div
+      class="max-w-[1280px] mx-auto  h-full flex items-center justify-between"
+    >
+      
+      <div class="flex items-center gap-4">
+        <button id="mobile-menu-btn" class="lg:hidden text-white text-xl hover:text-pcg-red transition-colors">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="/" class="flex items-center group">
+          <span
+            class="bg-pcg-red text-white font-black px-2 py-1 text-2xl tracking-tighter group-hover:bg-red-600 transition-colors"
+            >PC</span
+          >
+          <span
+            class="text-white font-black text-2xl tracking-tighter ml-1 group-hover:text-gray-300 transition-colors"
+            >GAMER</span
+          >
+        </a>
+      </div>
+
+      
+      <div class="flex items-center space-x-4 md:space-x-6">
+        
+        
+        <div class="hidden md:flex items-center text-xs font-bold uppercase text-gray-400 border-r border-gray-700 pr-4 mr-2 relative group">
+           <button id="edition-selector-btn" class="flex items-center hover:text-white focus:outline-none">
+             
+             <span class="mr-2">US Edition</span>
+             <span class="text-xl">🇺🇸</span>
+             <i class="fas fa-caret-down ml-2 transition-transform duration-200 group-hover:rotate-180"></i>
+             
+           </button>
+           
+           
+           <div id="edition-dropdown" class="absolute top-full right-0 mt-0 w-56 bg-white text-gray-900 shadow-xl rounded-sm hidden flex-col z-[100] py-2 border border-gray-100 transform origin-top-right transition-all duration-200">
+             
+             <a href="#" class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-100 transition-colors group/item">
+               <div class="flex items-center">
+                 <span class="text-2xl mr-3">🇬🇧</span>
+                 <span class="font-bold text-sm">UK</span>
+               </div>
+               
+             </a>
+             
+             <a href="#" class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-100 transition-colors group/item">
+               <div class="flex items-center">
+                 <span class="text-2xl mr-3">🇺🇸</span>
+                 <span class="font-bold text-sm">US</span>
+               </div>
+               
+               <i class="fas fa-check text-green-600 text-sm"></i>
+               
+             </a>
+             
+             <a href="#" class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-100 transition-colors group/item">
+               <div class="flex items-center">
+                 <span class="text-2xl mr-3">🇨🇦</span>
+                 <span class="font-bold text-sm">Canada</span>
+               </div>
+               
+             </a>
+             
+             <a href="#" class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-100 transition-colors group/item">
+               <div class="flex items-center">
+                 <span class="text-2xl mr-3">🇦🇺</span>
+                 <span class="font-bold text-sm">Australia</span>
+               </div>
+               
+             </a>
+             
+           </div>
+        </div>
+
+        
+        <div
+          class="hidden xl:flex items-center space-x-3 border-r border-gray-700 pr-6 mr-2"
+        >
+          
+          <a
+            href="#"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 bg-[#171a21]"
+            title="steam"
+          >
+             <i class="fab fa-steam"></i>
+          </a>
+          
+          <a
+            href="#"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 bg-[#1877F2]"
+            title="facebook"
+          >
+             <i class="fab fa-facebook-f"></i>
+          </a>
+          
+          <a
+            href="#"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 bg-[#1DA1F2]"
+            title="twitter"
+          >
+             <i class="fab fa-x-twitter"></i>
+          </a>
+          
+          <a
+            href="#"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 bg-[#E4405F]"
+            title="instagram"
+          >
+             <i class="fab fa-instagram"></i>
+          </a>
+          
+          <a
+            href="#"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 bg-[#FF0000]"
+            title="youtube"
+          >
+             <i class="fab fa-youtube"></i>
+          </a>
+          
+          <a
+            href="#"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 bg-[#9146FF]"
+            title="twitch"
+          >
+             <i class="fab fa-twitch"></i>
+          </a>
+          
+          <a
+            href="#"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 bg-[#F52828]"
+            title="flipboard"
+          >
+             <i class="fab fa-flipboard"></i>
+          </a>
+          
+          <a
+            href="#"
+            class="w-7 h-7 flex items-center justify-center rounded-full text-white text-xs transition-transform hover:scale-110 bg-[#ff0050]"
+            title="tiktok"
+          >
+             <i class="fab fa-tiktok"></i>
+          </a>
+          
+        </div>
+
+        
+        <a href="#" class="hover:text-pcg-red transition-colors"
+          ><i class="fas fa-search text-lg"></i
+        ></a>
+
+        
+        <a href="#" class="hover:text-pcg-red transition-colors"
+           ><i class="fas fa-bell text-lg"></i
+        ></a>
+        
+        <button
+          id="subscribe-btn"
+          class="hidden md:flex bg-white text-pcg-black font-bold text-xs px-3 py-1.5 uppercase hover:bg-gray-200 transition-colors items-center focus:outline-none"
+        >
+          Subscribe
+          <i id="subscribe-arrow" class="fas fa-caret-down ml-1 transition-transform duration-200"></i>
+        </button>
+        
+        <button id="sign-in-btn" class="hidden md:flex items-center text-sm font-bold hover:text-pcg-red transition-colors focus:outline-none">
+            Sign In <i class="fas fa-user ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="bg-pcg-red text-white shadow-md relative z-40 hidden lg:block">
+    <div class="max-w-[1280px] mx-auto h-10 lg:h-12">
+      <nav
+        class="flex items-center overflow-x-auto whitespace-nowrap scrollbar-hide h-10 lg:h-12"
+      >
+        
+          
+            <a
+              href="/"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide  lg:border-r lg:border-red-500/30 "
+            >
+              <i class="fas fa-home"></i>
+              <span class="ml-4">Home</span>
+              
+            </a>
+          
+        
+          
+            <a
+              href="/tags/games"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide "
+            >
+              
+              <span class="">Games</span>
+              
+            </a>
+          
+        
+          
+            <a
+              href="/tags/hardware-guide"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide "
+            >
+              
+              <span class="">Hardware</span>
+              
+            </a>
+          
+        
+          
+            <a
+              href="/tags/news"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide "
+            >
+              
+              <span class="">News</span>
+              
+            </a>
+          
+        
+          
+            <a
+              href="/tags/review"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide "
+            >
+              
+              <span class="">Reviews</span>
+              
+            </a>
+          
+        
+          
+            <a
+              href="/tags/hardware-guide"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide "
+            >
+              
+              <span class="">Guides</span>
+              
+            </a>
+          
+        
+          
+            <a
+              href="/tags/video"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide "
+            >
+              
+              <span class="">Video</span>
+              
+            </a>
+          
+        
+          
+            <a
+              href="/tags/forum"
+              class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide "
+            >
+              
+              <span class="">Forum</span>
+              
+            </a>
+          
+        
+          
+            <div class="relative group h-full z-50">
+                <a
+                  href="/more"
+                  class="text-white font-medium uppercase text-sm px-3 lg:px-4 h-full flex items-center hover:bg-black/20 transition-colors tracking-wide cursor-pointer"
+                >
+                  
+                  <span class="">More</span>
+                  <i class="fas fa-caret-down ml-1"></i>
+                </a>
+                
+                
+                <div class="absolute right-0 top-full w-64 bg-[#111] shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 z-50">
+                    <div class="py-2">
+                        
+                        <a href="/tags/pc-gaming-show" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            PC Gaming Show
+                        </a>
+                        
+                        <a href="/tags/software" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Software
+                        </a>
+                        
+                        <a href="/tags/movies-tv" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Movies &amp; TV
+                        </a>
+                        
+                        <a href="/tags/codes" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Codes
+                        </a>
+                        
+                        <a href="/tags/coupons" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Coupons
+                        </a>
+                        
+                        <a href="/magazine" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Magazine
+                        </a>
+                        
+                        <a href="/newsletter" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Newsletter
+                        </a>
+                        
+                        <a href="/affiliate" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Affiliate links
+                        </a>
+                        
+                        <a href="/team" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Meet the team
+                        </a>
+                        
+                        <a href="/guidelines" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            Community guidelines
+                        </a>
+                        
+                        <a href="/about" class="block px-5 py-3 text-gray-200 text-sm font-bold hover:text-white hover:bg-[#222] transition-colors border-b border-gray-800/50 last:border-0">
+                            About PC Gamer
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+          
+        
+      </nav>
+    </div>
+  </div>
+
+  
+  <div id="subscribe-panel" class="w-[1280px] mx-auto bg-white  hidden relative z-30 transition-all duration-300 origin-top">
+     <div class="px-4 py-12">
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-center gap-12">
+           
+           <div class="flex-shrink-0 relative">
+               <div class="relative w-64 h-80 transition-transform hover:scale-105 duration-300">
+                  
+                  <div class="absolute top-0 left-0 w-56 h-72 bg-gray-800 rounded-xl shadow-2xl transform -rotate-3 border-4 border-gray-700 overflow-hidden z-10">
+                      
+                      <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                              <span class="text-white font-black text-2xl leading-none">PC<br>GAMER</span>
+                              <span class="text-yellow-400 font-bold text-xs mt-1">EXCLUSIVE ISSUE</span>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="absolute bottom-0 right-0 w-24 h-44 bg-gray-800 rounded-xl shadow-2xl border-4 border-gray-700 overflow-hidden z-20">
+                       
+                       <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80');">
+                           <div class="absolute inset-0 bg-black/30"></div>
+                       </div>
+                  </div>
+               </div>
+           </div>
+
+           
+           <div class="flex-1 max-w-lg pt-4 text-center md:text-left">
+              <h3 class="text-3xl md:text-4xl font-display font-bold text-pcg-black mb-6 tracking-tight">PC Gamer Magazine Subscription</h3>
+              
+              <div class="mb-6">
+                 <h4 class="text-xl text-gray-800 mb-3 font-medium">Why subscribe?</h4>
+                 <ul class="space-y-3 inline-block md:block text-left">
+                    <li class="flex items-start">
+                       <i class="fas fa-circle text-[6px] mt-2.5 mr-3 text-pcg-black flex-shrink-0"></i>
+                       <span class="text-lg text-gray-800">Subscribe to the world's #1 PC gaming mag</span>
+                    </li>
+                    <li class="flex items-start">
+                       <i class="fas fa-circle text-[6px] mt-2.5 mr-3 text-pcg-black flex-shrink-0"></i>
+                       <span class="text-lg text-gray-800">Try a single issue or save on a subscription</span>
+                    </li>
+                    <li class="flex items-start">
+                       <i class="fas fa-circle text-[6px] mt-2.5 mr-3 text-pcg-black flex-shrink-0"></i>
+                       <span class="text-lg text-gray-800">Issues delivered straight to your door or device</span>
+                    </li>
+                 </ul>
+              </div>
+
+              <div class="flex flex-col items-center md:items-start gap-4">
+                  <div class="text-2xl font-bold text-gray-900">
+                     <span class="text-lg font-normal text-gray-600">From</span> US$32.49
+                  </div>
+                  <a href="#" class="bg-pcg-red text-white font-bold uppercase text-lg px-12 py-3 hover:bg-red-700 transition-colors w-full md:w-auto text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
+                     Subscribe Now
+                  </a>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</header>
+
+
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+
+
+<div id="mobile-menu-drawer" class="fixed inset-y-0 left-0 w-[280px] bg-pcg-black z-[70] transform -translate-x-full transition-transform duration-300 overflow-y-auto shadow-2xl">
+  <div class="p-4 border-b border-gray-800 flex justify-between items-center h-14">
+     <span class="text-white font-bold text-lg">Menu</span>
+     <button id="mobile-menu-close" class="text-gray-400 hover:text-white transition-colors">
+       <i class="fas fa-times text-xl"></i>
+     </button>
+  </div>
+  <div class="p-4">
+      
+      <div class="mb-6 pb-4 border-b border-gray-800">
+         <h5 class="text-gray-500 uppercase font-bold text-xs mb-3">Edition</h5>
+         <div class="flex flex-col space-y-2">
+            
+            <a href="#" class="flex items-center justify-between text-sm font-bold text-gray-400 hover:text-white">
+                <span>UK</span>
+                <span>🇬🇧</span>
+            </a>
+            
+            <a href="#" class="flex items-center justify-between text-sm font-bold text-white">
+                <span>US</span>
+                <span>🇺🇸</span>
+            </a>
+            
+            <a href="#" class="flex items-center justify-between text-sm font-bold text-gray-400 hover:text-white">
+                <span>Canada</span>
+                <span>🇨🇦</span>
+            </a>
+            
+            <a href="#" class="flex items-center justify-between text-sm font-bold text-gray-400 hover:text-white">
+                <span>Australia</span>
+                <span>🇦🇺</span>
+            </a>
+            
+         </div>
+      </div>
+
+      <a href="#" class="w-full bg-pcg-red text-white text-center font-bold uppercase py-2 block mb-4 hover:bg-red-600 transition-colors">Subscribe</a>
+      
+      <nav class="flex flex-col space-y-1">
+         
+         <a href="/" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           <i class="fas fa-home"></i> Home
+         </a>
+         
+         <a href="/tags/games" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           Games
+         </a>
+         
+         <a href="/tags/hardware-guide" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           Hardware
+         </a>
+         
+         <a href="/tags/news" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           News
+         </a>
+         
+         <a href="/tags/review" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           Reviews
+         </a>
+         
+         <a href="/tags/hardware-guide" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           Guides
+         </a>
+         
+         <a href="/tags/video" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           Video
+         </a>
+         
+         <a href="/tags/forum" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           Forum
+         </a>
+         
+         <a href="/more" class="text-gray-300 hover:text-pcg-red font-bold py-3 border-b border-gray-800 transition-colors uppercase text-sm">
+           More
+         </a>
+         
+      </nav>
+      
+      
+      <div class="mt-8">
+        <h5 class="text-gray-500 uppercase font-bold text-xs mb-4">Follow Us</h5>
+        <div class="flex flex-wrap gap-4">
+            
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors bg-[#171a21]">
+                 <i class="fab fa-steam"></i>
+            </a>
+            
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors bg-[#1877F2]">
+                 <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors bg-[#1DA1F2]">
+                 <i class="fab fa-x-twitter"></i>
+            </a>
+            
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors bg-[#E4405F]">
+                 <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors bg-[#FF0000]">
+                 <i class="fab fa-youtube"></i>
+            </a>
+            
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors bg-[#9146FF]">
+                 <i class="fab fa-twitch"></i>
+            </a>
+            
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors bg-[#F52828]">
+                 <i class="fab fa-flipboard"></i>
+            </a>
+            
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full text-white text-lg transition-colors bg-[#ff0050]">
+                 <i class="fab fa-tiktok"></i>
+            </a>
+            
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<div id="login-modal" class="fixed inset-0 z-[100] hidden">
+    
+    <div id="login-overlay" class="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+    
+    
+    <div id="login-content" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white shadow-2xl rounded-lg overflow-hidden scale-90 opacity-0 transition-all duration-300">
+        
+        <div class="bg-pcg-red p-6 flex justify-between items-center">
+            <h2 class="text-white text-2xl font-display font-bold uppercase tracking-wide">Sign In</h2>
+            <button id="login-close" class="text-white hover:text-gray-200 transition-colors focus:outline-none">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        
+        
+        <div class="p-8">
+            <div class="space-y-3 mb-6">
+                <button type="button" class="w-full flex items-center justify-center bg-white border border-gray-300 text-gray-700 font-bold py-2.5 rounded hover:bg-gray-50 transition-colors">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-3" alt="Google">
+                    Sign in with Google
+                </button>
+                <button type="button" class="w-full flex items-center justify-center bg-[#1877F2] text-white font-bold py-2.5 rounded hover:bg-[#166fe5] transition-colors">
+                    <i class="fab fa-facebook-f mr-3 text-lg"></i>
+                    Sign in with Facebook
+                </button>
+                <button type="button" class="w-full flex items-center justify-center bg-black text-white font-bold py-2.5 rounded hover:bg-gray-800 transition-colors">
+                    <i class="fab fa-apple mr-3 text-lg"></i>
+                    Sign in with Apple
+                </button>
+            </div>
+            
+            <div class="relative flex py-2 items-center mb-6">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="flex-shrink-0 mx-4 text-gray-400 text-xs font-bold uppercase">Or sign in with email</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+            </div>
+
+            <form class="space-y-5">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2 uppercase" for="email">Email or Username</label>
+                    <input class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-pcg-red focus:ring-1 focus:ring-pcg-red transition-colors" id="email" type="text" placeholder="Enter your email">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2 uppercase" for="password">Password</label>
+                    <input class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-pcg-red focus:ring-1 focus:ring-pcg-red transition-colors" id="password" type="password" placeholder="••••••••">
+                </div>
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="form-checkbox text-pcg-red h-4 w-4">
+                        <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                    </label>
+                    <a href="#" class="text-sm text-pcg-red hover:underline font-bold">Forgot Password?</a>
+                </div>
+                <button type="button" class="w-full bg-pcg-black text-white font-bold uppercase py-3 rounded hover:bg-gray-800 transition-colors transform active:scale-95 duration-150">
+                    Log In
+                </button>
+            </form>
+            
+            <div class="mt-6 text-center border-t border-gray-200 pt-6">
+                <p class="text-gray-600 text-sm">Don't have an account?</p>
+                <a href="#" class="inline-block mt-2 text-pcg-red font-bold uppercase hover:underline">Create Account</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const drawer = document.getElementById('mobile-menu-drawer');
+      const overlay = document.getElementById('mobile-menu-overlay');
+
+      function toggleMenu() {
+        const isHidden = drawer.classList.contains('-translate-x-full');
+        if (isHidden) {
+           drawer.classList.remove('-translate-x-full');
+           overlay.classList.remove('hidden');
+           
+           void overlay.offsetWidth; 
+           overlay.classList.remove('opacity-0');
+           document.body.style.overflow = 'hidden';
+        } else {
+           drawer.classList.add('-translate-x-full');
+           overlay.classList.add('opacity-0');
+           setTimeout(() => {
+               overlay.classList.add('hidden');
+               document.body.style.overflow = '';
+           }, 300);
+        }
+      }
+
+      if(btn) btn.addEventListener('click', toggleMenu);
+      if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
+      if(overlay) overlay.addEventListener('click', toggleMenu);
+
+      
+      const editionBtn = document.getElementById('edition-selector-btn');
+      const editionDropdown = document.getElementById('edition-dropdown');
+      
+      
+      function updateActiveEdition(name, flag) {
+        if(editionBtn) {
+           const spans = editionBtn.querySelectorAll('span');
+           if(spans.length >= 2) {
+             spans[0].textContent = name + ' Edition';
+             spans[1].textContent = flag;
+           }
+        }
+      }
+
+      if(editionBtn && editionDropdown) {
+        
+        editionBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          editionDropdown.classList.toggle('hidden');
+          editionDropdown.classList.toggle('flex');
+        });
+        
+        
+        const editionLinks = editionDropdown.querySelectorAll('a');
+        editionLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+               e.preventDefault();
+               const name = link.querySelector('.font-bold').textContent;
+               const flag = link.querySelector('.text-2xl').textContent;
+               
+               
+               updateActiveEdition(name, flag);
+               
+               
+               editionLinks.forEach(l => {
+                  const check = l.querySelector('.fa-check');
+                  if(check) check.remove();
+               });
+               
+               
+               const checkIcon = document.createElement('i');
+               checkIcon.className = 'fas fa-check text-green-600 text-sm';
+               link.appendChild(checkIcon);
+
+               
+               editionDropdown.classList.add('hidden');
+               editionDropdown.classList.remove('flex');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!editionBtn.contains(e.target) && !editionDropdown.contains(e.target)) {
+            editionDropdown.classList.add('hidden');
+            editionDropdown.classList.remove('flex');
+          }
+        });
+      }
+
+      
+      const loginBtn = document.getElementById('sign-in-btn');
+      const loginModal = document.getElementById('login-modal');
+      const loginOverlay = document.getElementById('login-overlay');
+      const loginContent = document.getElementById('login-content');
+      const loginClose = document.getElementById('login-close');
+
+      function toggleLoginModal() {
+         if(loginModal.classList.contains('hidden')) {
+            loginModal.classList.remove('hidden');
+            
+            void loginModal.offsetWidth;
+            loginOverlay.classList.remove('opacity-0');
+            loginContent.classList.remove('scale-90', 'opacity-0');
+            loginContent.classList.add('scale-100', 'opacity-100');
+            document.body.style.overflow = 'hidden';
+         } else {
+            loginOverlay.classList.add('opacity-0');
+            loginContent.classList.remove('scale-100', 'opacity-100');
+            loginContent.classList.add('scale-90', 'opacity-0');
+            setTimeout(() => {
+                loginModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+         }
+      }
+
+      if(loginBtn) loginBtn.addEventListener('click', toggleLoginModal);
+      if(loginClose) loginClose.addEventListener('click', toggleLoginModal);
+      if(loginOverlay) loginOverlay.addEventListener('click', toggleLoginModal);
+
+      
+      const subscribeBtn = document.getElementById('subscribe-btn');
+      const subscribePanel = document.getElementById('subscribe-panel');
+      const subscribeArrow = document.getElementById('subscribe-arrow');
+
+      if(subscribeBtn && subscribePanel) {
+         subscribeBtn.addEventListener('click', (e) => {
+             e.stopPropagation();
+             const isHidden = subscribePanel.classList.contains('hidden');
+             
+             if(isHidden) {
+                subscribePanel.classList.remove('hidden');
+                subscribeArrow.classList.add('rotate-180');
+             } else {
+                subscribePanel.classList.add('hidden');
+                subscribeArrow.classList.remove('rotate-180');
+             }
+         });
+
+         
+         document.addEventListener('click', (e) => {
+            if(!subscribeBtn.contains(e.target) && !subscribePanel.contains(e.target)) {
+                subscribePanel.classList.add('hidden');
+                subscribeArrow.classList.remove('rotate-180');
+            }
+         });
+      }
+  });
+</script>
+
+    <div class="relative min-h-screen">
+       
+       <div class="fixed inset-0 pointer-events-none  opacity-20 z-0"></div>
+      <main class="relative z-10 w-full bg-[#f2f2f2] ">
+        
+
+
+
+<div class="bg-[#f2f2f2] relative z-20 mb-8 border-b border-gray-200">
+  <div class="max-w-[1280px] mx-auto px-4">
+      <div class="flex items-center overflow-x-auto whitespace-nowrap scrollbar-hide -mb-px">
+          
+              
+              
+              
+              
+              
+              
+              
+
+              <a href="/" class="block py-4 px-6 text-sm font-bold uppercase tracking-wide transition-colors text-gray-700 hover:text-pcg-red border-b-4 border-transparent hover:border-gray-200">
+                  POPULAR
+              </a>
+          
+              
+              
+              
+              
+              
+              
+              
+
+              <a href="/tags/goty-awards" class="block py-4 px-6 text-sm font-bold uppercase tracking-wide transition-colors text-gray-700 hover:text-pcg-red border-b-4 border-transparent hover:border-gray-200">
+                  GOTY Awards
+              </a>
+          
+              
+              
+              
+              
+              
+              
+              
+
+              <a href="/tags/fallout-season-2" class="block py-4 px-6 text-sm font-bold uppercase tracking-wide transition-colors text-gray-700 hover:text-pcg-red border-b-4 border-transparent hover:border-gray-200">
+                  Fallout Season 2
+              </a>
+          
+              
+              
+              
+              
+              
+              
+              
+
+              <a href="/tags/best-pc-gear" class="block py-4 px-6 text-sm font-bold uppercase tracking-wide transition-colors text-gray-700 hover:text-pcg-red border-b-4 border-transparent hover:border-gray-200">
+                  Best PC gear
+              </a>
+          
+              
+              
+              
+              
+              
+              
+              
+
+              <a href="/tags/arc-raiders" class="block py-4 px-6 text-sm font-bold uppercase tracking-wide transition-colors text-gray-700 hover:text-pcg-red border-b-4 border-transparent hover:border-gray-200">
+                  Arc Raiders
+              </a>
+          
+              
+              
+              
+              
+              
+              
+              
+
+              <a href="/tags/quizzes" class="block py-4 px-6 text-sm font-bold uppercase tracking-wide transition-colors text-gray-700 hover:text-pcg-red border-b-4 border-transparent hover:border-gray-200">
+                  Quizzes
+              </a>
+          
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+    <div class="bg-white">
+    <div class="max-w-[1280px] mx-auto px-4 py-8">
+        
+        
+        <div class="mb-8 border-b-2 border-black pb-2">
+            <h1 class="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
+                NewsBest PC GearArc RaidersQuizzesForum
+            </h1>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-8">
+                
+                
+                <div class="mb-6 border-b border-gray-200">
+                    <h2 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">
+                        LATEST ABOUT NEWSBEST PC GEARARC RAIDERSQUIZZESFORUM
+                    </h2>
+                </div>
+
+                
+                <div class="flex flex-col gap-6">
+                    
+                    
+                    
+                    <article class="flex flex-col md:flex-row gap-6 group border-b border-gray-100 pb-6 last:border-0">
+                        
+                        <div class="w-full md:w-[260px] flex-shrink-0">
+                            <a href="/posts/fear-still-as-iconic-20-years-later-why-we-play/" class="block relative aspect-video overflow-hidden bg-gray-100">
+                                
+                                <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="F.E.A.R: Still as iconic 20 years later? | Why We Play" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                
+                                
+                                
+                                <span class="absolute top-0 left-0 bg-pcg-red text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider">
+                                    NewsBest PC gearArc RaidersQuizzesForum
+                                </span>
+                            </a>
+                        </div>
+
+                        
+                        <div class="flex flex-col flex-grow">
+                            <h3 class="text-xl md:text-2xl font-bold leading-tight mb-2 font-serif group-hover:text-pcg-red transition-colors">
+                                <a href="/posts/fear-still-as-iconic-20-years-later-why-we-play/">F.E.A.R: Still as iconic 20 years later? | Why We Play</a>
+                            </h3>
+                            
+                            <div class="flex items-center text-xs text-gray-500 font-sans mb-3 uppercase tracking-wide">
+                                <span class="font-bold text-pcg-red">
+                                    PC Gamer Team
+                                </span>
+                                <span class="mx-2 text-gray-300">•</span>
+                                <span>published December 31, 2025</span>
+                            </div>
+
+                            <p class="text-gray-600 text-sm leading-relaxed line-clamp-2 md:line-clamp-3 font-sans mb-3">
+                                <h1 id="fear-still-as-iconic-20-years-later--why-we-play">F.E.A.R: Still as iconic 20 years later? | Why We Play</h1>
+<p>Click to read more about this topic.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. …</p>
+                            </p>
+
+                            
+                        </div>
+                    </article>
+                    
+                </div>
+
+                
+                
+
+            </div>
+
+            
+            <div class="lg:col-span-4">
+                  
+  <aside class="lg:col-span-4 space-y-8">
+        
+    <div class=  "bg-gray-50 p-6 border border-gray-200">
+      <div
+        class="flex items-center justify-between border-b-2 border-pcg-red pb-2 mb-4"
+      >
+        <h4 class="text-pcg-red font-black uppercase text-xl">Trending</h4>
+      </div>
+      <ul class="space-y-4">
+        <li class="group cursor-pointer flex gap-4">
+          <span
+            class="text-4xl font-black text-gray-200 group-hover:text-pcg-red transition-colors leading-none"
+            >1</span
+          >
+          <p
+            class="font-bold leading-snug group-hover:text-pcg-red transition-colors hover:underline"
+          >
+            Best various RPG games of 2024
+          </p>
+        </li>
+        <li class="group cursor-pointer flex gap-4">
+          <span
+            class="text-4xl font-black text-gray-200 group-hover:text-pcg-red transition-colors leading-none"
+            >2</span
+          >
+          <p
+            class="font-bold leading-snug group-hover:text-pcg-red transition-colors hover:underline"
+          >
+            How to fix the latest Windows update bug
+          </p>
+        </li>
+        <li class="group cursor-pointer flex gap-4">
+          <span
+            class="text-4xl font-black text-gray-200 group-hover:text-pcg-red transition-colors leading-none"
+            >3</span
+          >
+          <p
+            class="font-bold leading-snug group-hover:text-pcg-red transition-colors hover:underline"
+          >
+            The 100 best PC games of all time
+          </p>
+        </li>
+        <li class="group cursor-pointer flex gap-4">
+          <span
+            class="text-4xl font-black text-gray-200 group-hover:text-pcg-red transition-colors leading-none"
+            >4</span
+          >
+          <p
+            class="font-bold leading-snug group-hover:text-pcg-red transition-colors hover:underline"
+          >
+            Why everyone is playing this indie gem
+          </p>
+        </li>
+        <li class="group cursor-pointer flex gap-4">
+          <span
+            class="text-4xl font-black text-gray-200 group-hover:text-pcg-red transition-colors leading-none"
+            >5</span
+          >
+          <p
+            class="font-bold leading-snug group-hover:text-pcg-red transition-colors hover:underline"
+          >
+            Steam Summer Sale start dates leaked
+          </p>
+        </li>
+      </ul>
+    </div>
+
+        
+    <div
+      class="bg-pcg-black text-white p-6 text-center border-t-8 border-pcg-red"
+    >
+      <h4 class="font-black uppercase text-2xl mb-2">The Newsletter</h4>
+      <p class="text-sm text-gray-400 mb-4">
+        Sign up to get the best content of the week, and great gaming deals, as
+        picked by the editors.
+      </p>
+      <div class="space-y-2">
+        <input
+          type="email"
+          placeholder="Your email address"
+          class="w-full p-3 text-black font-bold focus:outline-none focus:ring-2 focus:ring-pcg-red text-sm"
+        />
+        <button
+          class="w-full bg-pcg-red text-white uppercase font-black py-3 hover:bg-red-600 transition-colors text-sm tracking-wide"
+        >
+          Sign Up
+        </button>
+      </div>
+      <p class="text-[10px] text-gray-500 mt-4 leading-tight">
+        By submitting your information you agree to the Terms & Conditions and
+        Privacy Policy and are aged 16 or over.
+      </p>
+    </div>
+
+        
+    <div class="flex justify-center bg-gray-100 py-12 border border-gray-200">
+      <span class="text-gray-400 font-bold uppercase tracking-widest text-xs"
+        >Advertisement</span
+      >
+    </div>
+
+  </aside>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+      </main>
+   </div>
+    <footer
+  class="bg-black text-white pt-16 pb-8 border-t-[6px] border-pcg-red mt-12"
+>
+  <div
+    class="max-w-[1280px] mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12"
+  >
+    <div>
+      <div class="flex items-center group mb-6">
+        <span
+          class="bg-pcg-red text-white font-black px-2 py-1 text-2xl tracking-tighter"
+          >PC</span
+        >
+        <span class="text-white font-black text-2xl tracking-tighter ml-1"
+          >GAMER</span
+        >
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed mb-6">
+        PC Gamer is part of Future US Inc, an international media group and
+        leading digital publisher. Visit our corporate site.
+      </p>
+      <a
+        href="#"
+        class="inline-block border border-white px-4 py-2 font-bold uppercase text-xs hover:bg-white hover:text-black transition-colors"
+        >About Us</a
+      >
+    </div>
+
+    <div>
+      <h5 class="font-bold uppercase mb-4 text-gray-500 tracking-wider text-sm">
+        Sections
+      </h5>
+      <ul class="space-y-2 text-sm font-medium">
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors">News</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors">Reviews</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors">Hardware</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors"
+            >Best of 2024</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors">Magazine</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h5 class="font-bold uppercase mb-4 text-gray-500 tracking-wider text-sm">
+        Support
+      </h5>
+      <ul class="space-y-2 text-sm font-medium">
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors"
+            >Help / Support</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors"
+            >Advertise with Us</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors"
+            >Terms and Conditions</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-pcg-red transition-colors"
+            >Cookie Policy</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h5 class="font-bold uppercase mb-4 text-gray-500 tracking-wider text-sm">
+        Follow Us
+      </h5>
+      <div class="flex space-x-3">
+        <a
+          href="#"
+          class="bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full hover:bg-pcg-red transition-colors text-lg"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="#"
+          class="bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full hover:bg-pcg-red transition-colors text-lg"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a
+          href="#"
+          class="bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full hover:bg-pcg-red transition-colors text-lg"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a
+          href="#"
+          class="bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full hover:bg-pcg-red transition-colors text-lg"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="#"
+          class="bg-gray-800 w-10 h-10 flex items-center justify-center rounded-full hover:bg-pcg-red transition-colors text-lg"
+          ><i class="fab fa-discord"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="text-center text-gray-600 text-[10px] uppercase font-bold tracking-widest border-t border-gray-900 pt-8 mt-8"
+  >
+    &copy; 2024 Future US, Inc. All rights reserved.
+  </div>
+</footer>
+
+  </body>
+</html>

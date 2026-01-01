@@ -1,0 +1,126 @@
+<div class="bg-white">
+    <div class="max-w-[1280px] mx-auto px-4 py-8">
+        
+        <!-- Page Title Section -->
+        <div class="mb-8 border-b-2 border-black pb-2">
+            <h1 class="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
+                {{ .Title | default "Latest News" }}
+            </h1>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Main Content Column -->
+            <div class="lg:col-span-8">
+                
+                <!-- Section Header -->
+                <div class="mb-6 border-b border-gray-200">
+                    <h2 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">
+                        LATEST ABOUT {{ .Title | upper }}
+                    </h2>
+                </div>
+
+                <!-- Articles List -->
+                <div class="flex flex-col gap-6">
+                    {{ $paginator := .Paginate .Pages 10 }}
+                    {{ if eq (len $paginator.Pages) 0 }}
+                        <div class="py-12 text-center text-gray-500">
+                            <i class="fas fa-newspaper text-4xl mb-4 text-gray-300"></i>
+                            <p class="text-lg font-medium">No articles found in this section.</p>
+                        </div>
+                    {{ end }}
+                    {{ range $paginator.Pages }}
+                    <article class="flex flex-col md:flex-row gap-6 group border-b border-gray-100 pb-6 last:border-0">
+                        <!-- Image -->
+                        <div class="w-full md:w-[260px] flex-shrink-0">
+                            <a href="{{ .RelPermalink }}" class="block relative aspect-video overflow-hidden bg-gray-100">
+                                {{ if .Params.image }}
+                                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                {{ else }}
+                                <div class="w-full h-full flex items-center justify-center text-gray-400">
+                                    <i class="fas fa-image text-3xl"></i>
+                                </div>
+                                {{ end }}
+                                
+                                <!-- Red Tag Badge on Image (Top Left) -->
+                                <span class="absolute top-0 left-0 bg-pcg-red text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider">
+                                    {{ if .Params.tags }}{{ index .Params.tags 0 }}{{ else }}News{{ end }}
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex flex-col flex-grow">
+                            <h3 class="text-xl md:text-2xl font-bold leading-tight mb-2 font-serif group-hover:text-pcg-red transition-colors">
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </h3>
+                            
+                            <div class="flex items-center text-xs text-gray-500 font-sans mb-3 uppercase tracking-wide">
+                                <span class="font-bold text-pcg-red">
+                                    {{ .Params.author | default "PC Gamer Staff" }}
+                                </span>
+                                <span class="mx-2 text-gray-300">•</span>
+                                <span>published {{ .Date.Format "January 2, 2006" }}</span>
+                            </div>
+
+                            <p class="text-gray-600 text-sm leading-relaxed line-clamp-2 md:line-clamp-3 font-sans mb-3">
+                                {{ .Summary | truncate 150 }}
+                            </p>
+
+                            {{ if .Params.comments }}
+                            <div class="mt-auto flex items-center text-xs font-bold text-pcg-red uppercase group-hover:text-red-700 transition-colors">
+                                <i class="fas fa-comment mr-1.5"></i>
+                                {{ .Params.comments }} Comments
+                            </div>
+                            {{ end }}
+                        </div>
+                    </article>
+                    {{ end }}
+                </div>
+
+                <!-- Pagination -->
+                {{ if gt $paginator.TotalPages 1 }}
+                <div class="mt-12 flex justify-center text-xs font-bold text-pcg-red tracking-widest uppercase gap-4 items-center border-t border-gray-200 pt-8">
+                    <!-- Previous Button -->
+                    {{ if $paginator.HasPrev }}
+                    <a href="{{ $paginator.Prev.URL }}" class="hover:text-black transition-colors flex items-center">
+                        <i class="fas fa-chevron-left mr-1"></i> PREV
+                    </a>
+                    {{ else }}
+                    <span class="text-gray-300 flex items-center cursor-not-allowed">
+                        <i class="fas fa-chevron-left mr-1"></i> PREV
+                    </span>
+                    {{ end }}
+
+                    <!-- Page Numbers -->
+                    <div class="flex gap-2">
+                        {{ range $paginator.Pagers }}
+                            {{ if eq . $paginator }}
+                            <span class="bg-pcg-red text-white w-8 h-8 flex items-center justify-center rounded-sm">{{ .PageNumber }}</span>
+                            {{ else }}
+                            <a href="{{ .URL }}" class="text-gray-500 hover:text-pcg-red w-8 h-8 flex items-center justify-center border border-gray-200 hover:border-pcg-red transition-colors">{{ .PageNumber }}</a>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+
+                    <!-- Next Button -->
+                    {{ if $paginator.HasNext }}
+                    <a href="{{ $paginator.Next.URL }}" class="hover:text-black transition-colors flex items-center">
+                        NEXT <i class="fas fa-chevron-right ml-1"></i>
+                    </a>
+                    {{ else }}
+                    <span class="text-gray-300 flex items-center cursor-not-allowed">
+                        NEXT <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                    {{ end }}
+                </div>
+                {{ end }}
+
+            </div>
+
+            <!-- Sidebar Column -->
+            <div class="lg:col-span-4">
+                {{ partial "home/sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
